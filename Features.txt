@@ -1,0 +1,62 @@
+giống tiki
+Header
+- Header Top
+ + Ngày tháng
+ + Hotline đặt cơm, số điện thoại
+- Header Content
+ + Logo link về trang chủ
+ + Shopcart menu: stick lại fixed
+    - Đưa khung search ở giữa đây
+   - Login: Hiện modal login gồm có: Username, Password, Remember Me, Login, Cancle
+    - Login xog sẽ mất cái login và register đổi thành tên mình
+        - Chi tiết
+        - Chỉnh sửa thông tin
+        - Quản lý đơn hàng (history)
+        - Logout
+        - Hỏi đáp
+   - Register: Chuyển qua page register: Username, Password, Password 2, Email, Địa chỉ giao cơm, SDT, Họ và Tên
+   - Wish list: ... (bỏ lun)
+   - Checkout: ... (Có thể bỏ)
+   - Cart: ... Hiện form có checkout
+    - Bấm checkout link tới trang với thông tin sẵn có và thực đơn, bạn bấm edit để edit thông tin hoặc thanh toán
+- Header bottom
+ + Menu: Link đến từng part trong page
+    - Trang chủ
+    - Thực đơn: link đến content (Hôm nay món gì)
+    - Giới thiệu: Qua trang mới (content mới chứ ko thay đổi cả trang web)
+    - Liên hệ: footer part
+ + Khung Search: tìm kiếm những từ khóa liên quan (move ra giữa giống tiki, để lên shopping cart menu)
+- Slide
+    Hình ảnh đặc trưng cho quán + hotline
+    Hình mấy món ăn tiêu biểu - cùng comment
+
+Content:
+    - Left Menu
+        + Món ăn yêu thích của bạn (thêm sau)
+            kéo qua kéo lại nếu nhìu món
+        + Tuần này có gì (click)
+            Thứ 2 - Thứ 7 - Link qua cách trang con (content)
+            Tab menu từ thứ 2 đến thứ 7
+
+            Click vào thứ
+            Link tới đúng thứ đó trong tab menu
+
+            click vào món ăn
+            Link tới chi tiết món ăn đó
+        + Thực đơn (từ từ làm - hoặc có thể bỏ)
+        + Thống kê truy nhập
+        + Hỗ trợ trực tuyến
+        + Nhận thực đơn qua mail
+        + Khung search nâng cao (từ từ làm)
+    - Right Menu
+        + Món ăn bán chạy
+            - Hình món ăn
+            - Add vào danh sách thực đơn của bạn
+                - Hiển thị thực đơn của bạn đã đặt (có nút checkout, giống tiki)
+            - Add vào món ăn yêu thích
+            - Giá tiền
+
+Footer:
+ - Bản đồ - Form liên hệ
+ - Thông tin liên lệ
+ - Coyright

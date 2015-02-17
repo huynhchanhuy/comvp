@@ -1,0 +1,10 @@
+- Multi layout inherited on page.
+- cart wishlist
+- login logout register
+- admin page
+- search feature
+- database
+- map
+- email
+- contact form
+- slide
