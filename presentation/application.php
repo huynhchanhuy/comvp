@@ -33,11 +33,11 @@ class Application extends Smarty{
     public function createWebsite()
     {
         $this->initRegistry();
-        $this->initClasses(Root::getConfig()->utils);
+        $this->initUtils(Root::getConfig()->utils);
         $this->display('main.tpl');
     }
     
-    private function initClasses($utils)
+    private function initUtils($utils)
     {
         Root::setUtils($utils);
     }
