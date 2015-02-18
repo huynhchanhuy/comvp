@@ -35,6 +35,7 @@ class Application extends Smarty{
         $this->initRegistry();
         $this->initUtils(Root::getConfig()->utils);
         $this->display('main.tpl');
+        Root::getUtils()->timePassThrought->TimeMeasured(true);
     }
     
     private function initUtils($utils)
