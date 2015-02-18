@@ -24,6 +24,6 @@
     // Load Smarty template file
     $application = new Application();
     // Display the page
-    $application->display('main.tpl');
+    $application->createWebsite();
     // Close database connection
     DatabaseHandler::Close();

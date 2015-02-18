@@ -28,26 +28,29 @@ class Application extends Smarty{
         $this->config_dir = CONFIG_DIR;
         $this->plugins_dir[0] = SMARTY_DIR . 'plugins';
         $this->plugins_dir[1] = PRESENTATION_DIR . 'smarty_plugins';
-        
-        $config=require REGISTRY;
-        Root::setConfig($config);
-        
-        $this->registerClasses(Root::getConfig()->utils);
     }
     
-    private function registerClasses($utils)
+    public function createWebsite()
     {
-        // Looking for the class in *.php file
-        foreach ($utils as $obj => $vars) {
-            $className = str_replace(' ', '', 
-                ucfirst(str_replace('_', ' ',$vars['className'])));
-            include_once UTILS_DIR.'/'.$vars['fileName'].'.php';
-            $this->mClasses[$obj] = new $className($vars['params']);
-        }
+        $this->initRegistry();
+        $this->initClasses(Root::getConfig()->utils);
+        $this->display('main.tpl');
     }
     
-    public function Registry($registryFile) {
-        
+    private function initClasses($utils)
+    {
+        Root::setUtils($utils);
+    }
+    
+    private function initRegistry($registryFile=null) {
+        if(isset($registryFile))
+        {
+            $config=require $registryFile;
+        }
+        else {
+            $config=require REGISTRY;
+        }
+        Root::setConfig($config);
     }
 }
 
