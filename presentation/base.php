@@ -16,11 +16,12 @@ class Base {
     protected $filename;
     public $mIncludedTemplate;
     #protected $filehistory;
-    //Future modified: have filehistory
+    // Future modified: have filehistory
+    // Class extend from base will not have __construct declaration except main.php
    public function __construct($module,$filename) {
        $this->filename = $filename;
        $plugins = PLUGIN;
-       if($module === "main")
+       if($module === 'main')
        {
            // $main_modules = $this->mConfig['main']['modules'];
            $main_modules = Root::getConfig()->main['modules'];
@@ -28,13 +29,13 @@ class Base {
            {
                 $this->mIncludedTemplate[$mod_item] = Root::getConfig()->$mod_item;
            }
-           $this->mIncludedTemplate["layouts"] = Root::getConfig()->main["layouts"];
+           $this->mIncludedTemplate['layouts'] = Root::getConfig()->main['layouts'];
        }
        else
        {
             if(in_array($module, Root::getConfig()->main['modules']))
             {
-                $this->mIncludedTemplate['this'] = Root::getConfig()->$module;
+                $this->mIncludedTemplate = Root::getConfig()->$module;
                 
             }
        }

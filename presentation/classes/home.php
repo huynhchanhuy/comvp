@@ -19,5 +19,6 @@ class Home extends Base {
     // Initialize presentation object
     public function init()
     {
+        
     }
 }

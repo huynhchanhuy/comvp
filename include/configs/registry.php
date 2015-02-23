@@ -26,25 +26,54 @@ return array(
     'main' => array(
         'value' => 'main',
         // Primary module
-        'modules' => array('home','aboutus','contact','menu'),
+        'modules' => array('home','aboutus','contact','menu'),//because they are declare in this, so no need for <name>.tpl
         'layouts' => array(
-            'MAIN_HEADER' => '_header.tpl',
-            'MAIN_FOOTER' => '_footer.tpl'
+            'MAIN_HEADER' => array(
+                'name' => '_header.tpl',
+                'layouts' => array(),
+                //'path' => '', # specific path for including filename if you dont want to place it as default structure
+                ),
+            'MAIN_FOOTER' => array(
+                'name' => '_footer.tpl',
+                'layouts' => array(),
+                //'path' => '', # specific path for including filename if you dont want to place it as default structure
+                ),
         ),
     ),
-    // Primary module
+    // Primary module, must be place in default structure
     'home' => array(
         'value' => 0,
-        'attrs'=>array(
+        // <name>.tpl --> needless
+        'attrs' => array(
             'class' => '',
             ),
         'captions' => array('vn'=>'Trang Chủ'),
         'layouts' => array(
-            'HOME_SLIDER' => '_slider.tpl',
-            'HOME_LEFT_SIDEBAR' => '_left_sidebar.tpl',
-            'HOME_TODAY_ITEMS' => '_today_items.tpl',
-            'HOME_CATEGORY_TAB' => '_category_tab.tpl',
-            'HOME_TOP_CHOICES' => '_top_choices.tpl',
+            'HOME_SLIDER' => array(
+                'name' => '_slider.tpl',
+                'layouts' => array(),
+                //'path' => '', # specific path for including filename if you dont want to place it as default structure
+                ),
+            'HOME_LEFT_SIDEBAR' => array(
+                'name' => '_left_sidebar.tpl',
+                'layouts' => array(),
+                //'path' => '', # specific path for including filename if you dont want to place it as default structure
+                ),
+            'HOME_TODAY_ITEMS' => array(
+                'name' => '_today_items.tpl',
+                'layouts' => array(),
+                //'path' => '', # specific path for including filename if you dont want to place it as default structure
+                ),
+            'HOME_CATEGORY_TAB' => array(
+                'name' => '_category_tab.tpl',
+                'layouts' => array(),
+                //'path' => '', # specific path for including filename if you dont want to place it as default structure
+                ),
+            'HOME_TOP_CHOICES' => array(
+                'name' => '_top_choices.tpl',
+                'layouts' => array(),
+                //'path' => '', # specific path for including filename if you dont want to place it as default structure
+                ),
         )
     ),
     'aboutus' => array( # Term and service
@@ -90,6 +119,7 @@ return array(
         'timePassThrought' => array(
             'className' => 'TimePassThrought',
             'fileName' => 'TimePassThrought',
+            'enabled' => true,
             'params' => array(
                 // array of construct variable here
             )

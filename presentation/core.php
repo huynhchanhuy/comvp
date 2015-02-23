@@ -20,10 +20,34 @@ class Utils{
     {
         // Looking for the class in *.php file
         foreach ($utils as $obj => $vars) {
-            $className = str_replace(' ', '', 
-                ucfirst(str_replace('_', ' ',$vars['className'])));
-            include_once UTILS_DIR.'/'.$vars['fileName'].'.php';
-            $this->$obj = new $className($vars['params']);
+            if(!(isset($vars['enabled']) && $vars['enabled'] === false))
+            {
+                $className = str_replace(' ', '', 
+                    ucfirst(str_replace('_', ' ',$vars['className'])));
+                include_once UTILS_DIR.'/'.$vars['fileName'].'.php';
+                $this->$obj = new $className($vars['params']);
+
+                // Looking for the function init
+                if(method_exists($this->$obj, 'init'))
+                {
+                    $this->$obj->init();
+                }
+            }
+        }
+    }
+    
+    public function destroyObjects($var)
+    {
+        if(is_array($var))
+        {
+            foreach($var as $elem)
+            {
+                unset($this->$elem);
+            }
+        }
+        else
+        {
+            unset($this->$var);
         }
     }
 }
@@ -48,21 +72,15 @@ class Root{
     {
         return self::$_utils;
     }
-    public static function init()
-    {
+    public static function init(){
         require_once BUSINESS_DIR. 'error_handler.php';
         // Set the error handler
         ErrorHandler::SetHandler();
-
         // Load the application page template
         require_once PRESENTATION_DIR.'base.php';
         require_once PRESENTATION_DIR.'application.php';
         require_once PRESENTATION_DIR.'link.php'; // Link Factory
-
-        // Load the database handler
-        require_once BUSINESS_DIR . 'database_handler.php';
-
-        // Load Business Tier
-        require_once BUSINESS_DIR . 'catalog.php';
+        require_once BUSINESS_DIR . 'database_handler.php';// Load the database handler
+        require_once BUSINESS_DIR . 'catalog.php';// Load Business Tier
     }
 }

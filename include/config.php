@@ -22,6 +22,8 @@ define('REGISTRY', CONFIG_DIR.'/registry.php');
 
 define('PHP_CLASS_DIR',PRESENTATION_DIR.'classes');
 define('PLUGIN','plugins');
+define('TPL','.tpl');
+define('PHP','.php');
 
 //These should be true while developing the web site
 define('IS_WARNING_FATAL',true);

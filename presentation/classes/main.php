@@ -20,14 +20,14 @@ class Main extends Base {
         $modules = Root::getConfig()->main['modules'];
 
         #$this->$mPageTitle = 
-        $this->mContentsCell = $modules[0].'.tpl';
+        $this->mContentsCell = $modules[0].TPL;
         // check query string
         if (isset($_GET['nav']) && array_key_exists($_GET['nav'], $modules)) {
             foreach ($modules as $module)
             {
                 if ($_GET['nav'] === $module) {
                    $this->mPageTitle = Root::getConfig()->$module['captions'][0];
-                   $this->mContentsCell = $module.'.tpl';
+                   $this->mContentsCell = $module.TPL;
                     break;
                 }
             }

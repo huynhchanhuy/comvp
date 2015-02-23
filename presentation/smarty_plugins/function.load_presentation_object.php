@@ -26,8 +26,8 @@ function smarty_function_load_presentation_object($params, $smarty)
 //    echo '</pre>';
    
     // filename of template *.tpl --> current page
-    $filename = basename($params['filename'],".tpl");
-    $path = $filename . '.php';
+    $filename = basename($params['filename'],TPL);
+    $path = $filename . PHP;
     
     // Assign the filename (current page) of current page to the child node
     $childNode['filename'] = $filename;
@@ -36,15 +36,17 @@ function smarty_function_load_presentation_object($params, $smarty)
         // Assign parent node for the child node from current page's parent
         $childNode['parentpage'] = $params['parentpage'];
         // Load all parent page of current page recursively and generate the path
-        $result = explodePathFromNodes($childNode['parentpage']); 
-        $path = $result['dir'].$path;
+        $dir = explodePathFromNodes($childNode['parentpage'],$module); 
+        $path = $dir.$path;
     } else {
         $childNode['parentpage'] = NULL;
     }
     
     // If the result (module inside) could not be set, so current page is the module, an first page.
-    if(!isset($result['module']))
-        $result['module'] = $filename;
+    if(!isset($module))
+    {
+        $module = $filename;
+    }
     
     // include php class
     require_once PHP_CLASS_DIR.'/'.$path;   
@@ -56,7 +58,7 @@ function smarty_function_load_presentation_object($params, $smarty)
     
     // Create presentation object
     // module element is the neareast father of current page
-    $obj = new $className($result['module'],$filename);
+    $obj = new $className($module,$filename);
     
     // Looking for the function init
     if(method_exists($obj, 'init'))
@@ -69,10 +71,9 @@ function smarty_function_load_presentation_object($params, $smarty)
     $smarty->assign('this', $childNode); //--> $this can be invoked in tpl using this class
 }
 
-function explodePathFromNodes($parentNode)
+function explodePathFromNodes($parentNode,&$module)
 {
         $dir = '';
-        $module = NULL;
         // if parent node is the plugins folder. Plugin have only one directory that contains plugins
         if($parentNode === PLUGIN)
         {
@@ -85,20 +86,27 @@ function explodePathFromNodes($parentNode)
             $module = $parentNode['filename'];
             if(isset($parentNode['parentpage']))
             {
-                // Traverse all parent nodes from root to brances node.
-                foreach ($parentNode['parentpage'] as $node) {
-                    $dir .= $node['filename'].'/';
-                    // Check the next node is empty or not
-                    if (isset($node['parentpage'])) {
-                        //assign childNode to fatherNode (similar to n = n - 1)
-                        $parentNode = $node;
-                    } else {
-                        $module = $node['filename']; //neareast father of current page
-                        break;
-                    }
-                }
+                $dir=traversedNodes($parentNode['parentpage'],$module);
             }
         }
         
-        return array('dir' => $dir, 'module' => $module);
+        return $dir;//array('dir' => $dir, 'module' => $module);
+}
+
+function traversedNodes($parentNode,&$module)
+{
+    // Traverse all parent nodes from root to brances node.
+    foreach ($parentNode['parentpage'] as $node) {
+        $dir .= $node['filename'].'/';
+        // Check the next node is empty or not
+        if (isset($node['parentpage'])) {
+            //assign childNode to fatherNode (similar to n = n - 1)
+            $parentNode = $node;
+        } else {
+            $module = $node['filename']; //neareast father of current page
+            break;
+        }
+    }
+    
+    return $dir;
 }
