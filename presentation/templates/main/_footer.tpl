@@ -6,10 +6,10 @@
 <div class="footer-top">
         <div class="container">
                 <div class="row">
-                        <div class="col-sm-2">
-                                {include file=$plugins|cat:"/"|cat:$obj->mIncludedTemplate.$plugins.layouts.PLUGIN_COMPANY_INFO parent=$plugins}
+                        <div class="col-sm-5">
+                                {include file=$plugins|cat:"/"|cat:$obj->mIncludedTemplate.$plugins.layouts.PLUGIN_GMAP parent=$plugins}
                         </div>
-                        <div class="col-sm-7">
+                        <div class="col-sm-4">
                                 <div class="col-sm-3">
                                         <div class="video-gallery text-center">
                                                 <a href="#">
@@ -80,7 +80,7 @@
         </div>
 </div>
 
-<div class="footer-widget">
+{*<div class="footer-widget">
         <div class="container">
                 <div class="row">
                         <div class="col-sm-2">
@@ -144,7 +144,7 @@
 
                 </div>
         </div>
-</div>
+</div>*}
 
 <div class="footer-bottom">
         <div class="container">

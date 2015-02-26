@@ -44,7 +44,8 @@
         <script src="{#js_dir#}jquery.scrollUp.min.js"></script>
         <script src="{#js_dir#}price-range.js"></script>
         <script src="{#js_dir#}jquery.prettyPhoto.js"></script>
-        <script src="{#js_dir#}main.js"></script>
         <script src="{#js_dir#}private.js"></script>
+        <script src="{#js_dir#}vbdmap.js"></script>
+        <script src="{#js_dir#}main.js"></script>
     </body>
 </html>

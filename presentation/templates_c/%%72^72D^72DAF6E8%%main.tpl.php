@@ -1,4 +1,4 @@
-<?php /* Smarty version 2.6.28, created on 2015-02-23 16:34:39
+<?php /* Smarty version 2.6.28, created on 2015-02-26 19:11:44
          compiled from main.tpl */ ?>
 <?php require_once(SMARTY_CORE_DIR . 'core.load_plugins.php');
 smarty_core_load_plugins(array('plugins' => array(array('function', 'config_load', 'main.tpl', 2, false),array('function', 'load_presentation_object', 'main.tpl', 3, false),array('modifier', 'cat', 'main.tpl', 33, false),)), $this); ?>
@@ -79,8 +79,10 @@ price-range.js"></script>
         <script src="<?php echo $this->_config[0]['vars']['js_dir']; ?>
 jquery.prettyPhoto.js"></script>
         <script src="<?php echo $this->_config[0]['vars']['js_dir']; ?>
-main.js"></script>
-        <script src="<?php echo $this->_config[0]['vars']['js_dir']; ?>
 private.js"></script>
+        <script src="<?php echo $this->_config[0]['vars']['js_dir']; ?>
+vbdmap.js"></script>
+        <script src="<?php echo $this->_config[0]['vars']['js_dir']; ?>
+main.js"></script>
     </body>
 </html>
