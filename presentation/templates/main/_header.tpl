@@ -1,5 +1,11 @@
 {* header *}
 {load_presentation_object filename=$smarty.template parentpage=$parent assign="obj"}
+{*{include file="main/_header/_header_top.tpl" parent=$this}*}
+{*{include file='main/'|cat:$this.filename|cat:"/"|cat:$obj->mIncludedTemplate.layouts.header.layouts.TOP.name parent=$this}
+{include file='main/'|cat:$this.filename|cat:"/"|cat:$obj->mIncludedTemplate.layouts.header.layouts.MIDDLE.name parent=$this}
+{if isset($obj->mNavigation)}
+    {include file='main/'|cat:$this.filename|cat:"/"|cat:$obj->mIncludedTemplate.layouts.header.layouts.BOTTOM.name parent=$this}
+{/if}*}
 <div class="header_top"><!--header_top-->
     <div class="container">
         <div class="row">
@@ -47,42 +53,41 @@
         </div>
     </div>
 </div><!--/header-middle-->
-{if isset($obj->mNavigation)}
-    <div class="header-bottom"><!--header-bottom-->
-        <div class="container">
-            <div class="row">
-                <div class="col-sm-9">
-                    <div class="navbar-header">
-                        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                            <span class="sr-only">Toggle navigation</span>
-                            <span class="icon-bar"></span>
-                            <span class="icon-bar"></span>
-                            <span class="icon-bar"></span>
-                        </button>
-                    </div>
-                    <div class="mainmenu pull-left">
-                        <ul class="nav navbar-nav collapse navbar-collapse">
-                            <li><a href="{$obj->mNavigation.home.url}" class="{$obj->mNavigation.home.attr}">Trang Chủ</a></li>
-                            <li><a href="{$obj->mNavigation.aboutus.url}" class="{$obj->mNavigation.aboutus.attr}">Chính Sách <i class="fa fa-angle-down"></i></a>
-                                <ul role="menu" class="sub-menu">
-                                    <li><a href="presentation\templates\shop.html">Giới Thiệu Chung</a></li>
-                                    <li><a href="presentation\templates\product-details.html">Hướng Dẫn</a></li> 
-                                    <li><a href="presentation\templates\checkout.html">Hỏi đáp</a></li>
-                                </ul>
-                            </li>
-                            
-                            <li><a href="{$obj->mNavigation.menu.url}" class="{$obj->mNavigation.menu.attr}" >Thực Đơn</a></li>
-                            <li><a href="{$obj->mNavigation.contact.url}" class="{$obj->mNavigation.contact.attr}" >Liên Hệ</a></li>
-                                
-                        </ul>
-                    </div>
+
+<div class="header-bottom"><!--header-bottom-->
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-9">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
                 </div>
-                <div class="col-sm-3">
-                    <div class="search_box pull-right">
-                        <input type="text" placeholder="Tìm kiếm nhanh..."/>
-                    </div>
+                <div class="mainmenu pull-left">
+                    <ul class="nav navbar-nav collapse navbar-collapse">
+                        <li><a href="{$obj->mNavigation.home.url}" class="{$obj->mNavigation.home.attr}">Trang Chủ</a></li>
+                        <li><a href="{$obj->mNavigation.aboutus.url}" class="{$obj->mNavigation.aboutus.attr}">Chính Sách <i class="fa fa-angle-down"></i></a>
+                            <ul role="menu" class="sub-menu">
+                                <li><a href="presentation\templates\shop.html">Giới Thiệu Chung</a></li>
+                                <li><a href="presentation\templates\product-details.html">Hướng Dẫn</a></li> 
+                                <li><a href="presentation\templates\checkout.html">Hỏi đáp</a></li>
+                            </ul>
+                        </li>
+
+                        <li><a href="{$obj->mNavigation.menu.url}" class="{$obj->mNavigation.menu.attr}" >Thực Đơn</a></li>
+                        <li><a href="{$obj->mNavigation.contact.url}" class="{$obj->mNavigation.contact.attr}" >Liên Hệ</a></li>
+
+                    </ul>
+                </div>
+            </div>
+            <div class="col-sm-3">
+                <div class="search_box pull-right">
+                    <input type="text" placeholder="Tìm kiếm nhanh..."/>
                 </div>
             </div>
         </div>
-    </div><!--/header-bottom-->
-{/if}
+    </div>
+</div><!--/header-bottom-->

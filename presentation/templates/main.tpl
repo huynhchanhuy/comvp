@@ -30,13 +30,13 @@
     <body>
         <header id="header"><!--header-->
             {* Because mainpage does not have any plugin *}
-            {include file=$this.filename|cat:"/"|cat:$obj->mIncludedTemplate.layouts.MAIN_HEADER.name parent=$this}
+            {include file=$this.filename|cat:"/"|cat:$obj->mIncludedTemplate.layouts.header.name parent=$this}
         </header><!--/header-->
 
         {include file=$obj->mContentsCell}
 
         <footer id="footer"><!--Footer-->
-            {include file=$this.filename|cat:"/"|cat:$obj->mIncludedTemplate.layouts.MAIN_FOOTER.name parent=$this}
+            {include file=$this.filename|cat:"/"|cat:$obj->mIncludedTemplate.layouts.footer.name parent=$this}
         </footer><!--/Footer-->
 
         <script src="{#js_dir#}jquery.js"></script>

@@ -28,12 +28,25 @@ return array(
         // Primary module
         'modules' => array('home','aboutus','contact','menu'),//because they are declare in this, so no need for <name>.tpl
         'layouts' => array(
-            'MAIN_HEADER' => array(
+            'header' => array(
                 'name' => '_header.tpl',
-                'layouts' => array(),
+                'layouts' => array(
+                    'TOP' => array(
+                        'name' => '_header_top.tpl',
+                        //'path' => '', # specific path for including filename if you dont want to place it as default structure
+                        ),
+                    'MIDDLE' => array(
+                        'name' => '_header_middle.tpl',
+                        //'path' => '', # specific path for including filename if you dont want to place it as default structure
+                        ),
+                    'BOTTOM' => array(
+                        'name' => '_header_bottom.tpl',
+                        //'path' => '', # specific path for including filename if you dont want to place it as default structure
+                        ),
+                ),
                 //'path' => '', # specific path for including filename if you dont want to place it as default structure
                 ),
-            'MAIN_FOOTER' => array(
+            'footer' => array(
                 'name' => '_footer.tpl',
                 'layouts' => array(),
                 //'path' => '', # specific path for including filename if you dont want to place it as default structure

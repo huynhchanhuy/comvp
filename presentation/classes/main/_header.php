@@ -10,8 +10,8 @@ class Header extends Base {
 
     public $mNavigation;
 
-    public function __construct() {
-        parent::__construct("main","");
+    public function __construct($module,$filename) {
+        parent::__construct($module,$filename);
         //Enabled menu
         if(NAVIGATION == true)
         {

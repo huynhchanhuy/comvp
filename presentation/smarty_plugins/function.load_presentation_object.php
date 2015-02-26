@@ -28,6 +28,7 @@ function smarty_function_load_presentation_object($params, $smarty)
     // filename of template *.tpl --> current page
     $filename = basename($params['filename'],TPL);
     $path = $filename . PHP;
+    $module = array();
     
     // Assign the filename (current page) of current page to the child node
     $childNode['filename'] = $filename;
@@ -43,9 +44,10 @@ function smarty_function_load_presentation_object($params, $smarty)
     }
     
     // If the result (module inside) could not be set, so current page is the module, an first page.
-    if(!isset($module))
+    if(sizeof($module) === 0)
     {
-        $module = $filename;
+        //$module = $filename;
+        array_push($module, $filename);
     }
     
     // include php class
@@ -82,8 +84,9 @@ function explodePathFromNodes($parentNode,&$module)
         else {
             // Concat the filename of the first parentNode to dirs.
             $dir .= $parentNode['filename'].'/';
-            // Get parent of this page
-            $module = $parentNode['filename'];
+            // Get parent of this page, set it as default module (nearest father of this page)
+            // $module = $parentNode['filename'];
+            array_push($module, $parentNode['filename']);
             if(isset($parentNode['parentpage']))
             {
                 $dir=traversedNodes($parentNode['parentpage'],$module);
@@ -98,12 +101,13 @@ function traversedNodes($parentNode,&$module)
     // Traverse all parent nodes from root to brances node.
     foreach ($parentNode['parentpage'] as $node) {
         $dir .= $node['filename'].'/';
+        array_push($module, $node['filename']);
         // Check the next node is empty or not
         if (isset($node['parentpage'])) {
             //assign childNode to fatherNode (similar to n = n - 1)
             $parentNode = $node;
         } else {
-            $module = $node['filename']; //neareast father of current page
+            //$module = $node['filename']; //module is the neareast father of current page
             break;
         }
     }
