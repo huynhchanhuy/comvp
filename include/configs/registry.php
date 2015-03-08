@@ -118,7 +118,7 @@ return array(
         'value' => NULL,
         'caption' => NULL ,
         'layouts' => array(
-            'PLUGIN_COMPANY_INFO' => '_company_info.tpl',
+            'PLUGIN_SUBSCRIBED_FORM' => '_subscribed_form.tpl',
             'PLUGIN_GMAP' => '_gmap.tpl',
             'PLUGIN_CONTACT_FORM' => '_contact_form.tpl',
             'PLUGIN_CONTACT_INFO' => '_contact_info.tpl',

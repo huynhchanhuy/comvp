@@ -2432,16 +2432,16 @@ h2.title {
 **************************/
 
 .map-container {
-    position: relative;
-    overflow: hidden;
-      width: 100%;
+  position: relative;
+  overflow: hidden;
+  width: 100%;
   height: 230px;
   margin-top: 20px;
   margin-bottom: 20px;
--webkit-box-shadow: inset 0px 0px 5px 2px rgba(0,0,0,0.75);
--moz-box-shadow: inset 0px 0px 5px 2px rgba(0,0,0,0.75);
-box-shadow: inset 0px 0px 5px 2px rgba(0,0,0,0.75);
-padding: 5px 5px 5px 5px
+  -webkit-box-shadow: inset 0px 0px 5px 2px rgba(0,0,0,0.75);
+  -moz-box-shadow: inset 0px 0px 5px 2px rgba(0,0,0,0.75);
+  box-shadow: inset 0px 0px 5px 2px rgba(0,0,0,0.75);
+  padding: 5px 5px 5px 5px
 }
 
 
@@ -2544,4 +2544,12 @@ padding: 5px 5px 5px 5px
   color: #FE980F;
 }
 
+.contact-info, #subscribed{
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
 
+.btn-full{
+ width: 100% !important;
+ margin-top: -10px !important;
+}

@@ -11,7 +11,7 @@
  *
  * @author Huy
  */
-class CompanyInfo {
+class SubscribedForm {
     //put your code here
     public function init()
     {

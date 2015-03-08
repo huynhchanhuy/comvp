@@ -10,71 +10,10 @@
                                 {include file=$plugins|cat:"/"|cat:$obj->mIncludedTemplate.$plugins.layouts.PLUGIN_GMAP parent=$plugins}
                         </div>
                         <div class="col-sm-4">
-                                <div class="col-sm-3">
-                                        <div class="video-gallery text-center">
-                                                <a href="#">
-                                                        <div class="iframe-img">
-                                                                <img src="images/home/iframe1.png" alt="" />
-                                                        </div>
-                                                        <div class="overlay-icon">
-                                                                <i class="fa fa-play-circle-o"></i>
-                                                        </div>
-                                                </a>
-                                                <p>Circle of Hands</p>
-                                                <h2>24 DEC 2014</h2>
-                                        </div>
-                                </div>
-
-                                <div class="col-sm-3">
-                                        <div class="video-gallery text-center">
-                                                <a href="#">
-                                                        <div class="iframe-img">
-                                                                <img src="images/home/iframe2.png" alt="" />
-                                                        </div>
-                                                        <div class="overlay-icon">
-                                                                <i class="fa fa-play-circle-o"></i>
-                                                        </div>
-                                                </a>
-                                                <p>Circle of Hands</p>
-                                                <h2>24 DEC 2014</h2>
-                                        </div>
-                                </div>
-
-                                <div class="col-sm-3">
-                                        <div class="video-gallery text-center">
-                                                <a href="#">
-                                                        <div class="iframe-img">
-                                                                <img src="images/home/iframe3.png" alt="" />
-                                                        </div>
-                                                        <div class="overlay-icon">
-                                                                <i class="fa fa-play-circle-o"></i>
-                                                        </div>
-                                                </a>
-                                                <p>Circle of Hands</p>
-                                                <h2>24 DEC 2014</h2>
-                                        </div>
-                                </div>
-
-                                <div class="col-sm-3">
-                                        <div class="video-gallery text-center">
-                                                <a href="#">
-                                                        <div class="iframe-img">
-                                                                <img src="images/home/iframe4.png" alt="" />
-                                                        </div>
-                                                        <div class="overlay-icon">
-                                                                <i class="fa fa-play-circle-o"></i>
-                                                        </div>
-                                                </a>
-                                                <p>Circle of Hands</p>
-                                                <h2>24 DEC 2014</h2>
-                                        </div>
-                                </div>
+                                {include file=$plugins|cat:"/"|cat:$obj->mIncludedTemplate.$plugins.layouts.PLUGIN_CONTACT_INFO parent=$plugins}
                         </div>
                         <div class="col-sm-3">
-                                <div class="address">
-                                        <img src="images/home/map.png" alt="" />
-                                        <p>505 S Atlantic Ave Virginia Beach, VA(Virginia)</p>
-                                </div>
+                                {include file=$plugins|cat:"/"|cat:$obj->mIncludedTemplate.$plugins.layouts.PLUGIN_SUBSCRIBED_FORM parent=$plugins}
                         </div>
                 </div>
         </div>
@@ -150,7 +89,7 @@
         <div class="container">
                 <div class="row">
                         <p class="pull-left">Copyright © 2015 Cơm văn phòng. All rights reserved.</p>
-                        <p class="pull-right">Designed by <span><a target="_blank" href="http://www.themeum.com">Themeum</a></span> | Edited by: Huy Huynh.</p>
+                        <p class="pull-right">Designed by <span><a target="_blank" href="http://www.themeum.com">Themeum</a></span> | Edited by: Huy Huynh - Email: huynhchanhuy@gmail.com .</p>
                 </div>
         </div>
 </div>
