@@ -1,4 +1,4 @@
-<?php /* Smarty version 2.6.28, created on 2015-02-26 16:32:44
+<?php /* Smarty version 2.6.28, created on 2015-03-09 19:43:47
          compiled from main/_header.tpl */ ?>
 <?php require_once(SMARTY_CORE_DIR . 'core.load_plugins.php');
 smarty_core_load_plugins(array('plugins' => array(array('function', 'load_presentation_object', 'main/_header.tpl', 2, false),)), $this); ?>
@@ -45,7 +45,9 @@ smarty_core_load_plugins(array('plugins' => array(array('function', 'load_presen
                         <li><a href="#"><i class="fa fa-star"></i> Wishlist</a></li>
                         <li><a href="presentation\templates\checkout.html"><i class="fa fa-crosshairs"></i> Checkout</a></li>
                         <li><a href="presentation\templates\cart.html"><i class="fa fa-shopping-cart"></i> Cart</a></li>
-                        <li><a href="presentation\templates\login.html"><i class="fa fa-lock"></i> Login</a></li>
+                        <li><a href="<?php echo $this->_tpl_vars['obj']->mNavigation['login']['url']; ?>
+" class="<?php echo $this->_tpl_vars['obj']->mNavigation['login']['attr']; ?>
+"><i class="fa fa-lock"></i> Login</a></li>
                     </ul>
                 </div>
             </div>

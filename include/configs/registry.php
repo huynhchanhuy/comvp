@@ -26,23 +26,23 @@ return array(
     'main' => array(
         'value' => 'main',
         // Primary module
-        'modules' => array('home','aboutus','contact','menu'),//because they are declare in this, so no need for <name>.tpl
+        'modules' => array('home','aboutus','contact','menu','login'),//because they are declare in this, so no need for <name>.tpl
         'layouts' => array(
             'header' => array(
                 'name' => '_header.tpl',
                 'layouts' => array(
-                    'TOP' => array(
-                        'name' => '_header_top.tpl',
-                        //'path' => '', # specific path for including filename if you dont want to place it as default structure
-                        ),
-                    'MIDDLE' => array(
-                        'name' => '_header_middle.tpl',
-                        //'path' => '', # specific path for including filename if you dont want to place it as default structure
-                        ),
-                    'BOTTOM' => array(
-                        'name' => '_header_bottom.tpl',
-                        //'path' => '', # specific path for including filename if you dont want to place it as default structure
-                        ),
+//                    'TOP' => array(
+//                        'name' => '_header_top.tpl',
+//                        //'path' => '', # specific path for including filename if you dont want to place it as default structure
+//                        ),
+//                    'MIDDLE' => array(
+//                        'name' => '_header_middle.tpl',
+//                        //'path' => '', # specific path for including filename if you dont want to place it as default structure
+//                        ),
+//                    'BOTTOM' => array(
+//                        'name' => '_header_bottom.tpl',
+//                        //'path' => '', # specific path for including filename if you dont want to place it as default structure
+//                        ),
                 ),
                 //'path' => '', # specific path for including filename if you dont want to place it as default structure
                 ),
@@ -57,10 +57,7 @@ return array(
     'home' => array(
         'value' => 0,
         // <name>.tpl --> needless
-        'attrs' => array(
-            'class' => '',
-            ),
-        'captions' => array('vn'=>'Trang Chủ'),
+        'captions' => 'Trang Chủ',
         'layouts' => array(
             'HOME_SLIDER' => array(
                 'name' => '_slider.tpl',
@@ -91,39 +88,33 @@ return array(
     ),
     'aboutus' => array( # Term and service
         'value' => 1,
-        'attrs'=>array(
-            'class' => 'dropdown',
-            ),
-        'captions' => array('vn'=>'Chính Sách'),
+        'captions' => 'Chính Sách',
         'submenu' => array(
             
         ),
     ),
     'contact' => array(
         'value' => 2,
-        'attrs'=>array(
-            'class' => '',
-            ),
-        'captions' => array('vn'=>'Liên Hệ'),
+        'captions' => 'Liên Hệ',
     ),
     'menu' => array(
         'value' => 3,
-        'attrs'=>array(
-            'class' => '',
-            ),
-        'captions' => array('vn'=>'Thực Đơn'),
+        'captions' => 'Thực Đơn',
     ),
+   'login' => array(
+        'captions' => 'Đăng Nhập',
+        'layout'=>array()
+   ),
     // Plugin module
     PLUGIN => array(
         'value' => NULL,
         'caption' => NULL ,
         'layouts' => array(
-            'PLUGIN_SUBSCRIBED_FORM' => '_subscribed_form.tpl',
-            'PLUGIN_GMAP' => '_gmap.tpl',
-            'PLUGIN_CONTACT_FORM' => '_contact_form.tpl',
-            'PLUGIN_CONTACT_INFO' => '_contact_info.tpl',
-            'PLUGIN_LOGIN_FORM' => '_login_form.tpl',
-            'PLUGIN_SIGNUP_FORM_INFO' => '_signup_form.tpl'
+            'subscribed_form' => '_subscribed_form.tpl',
+            'gmap' => '_gmap.tpl',
+            'login_form' => '_login_form.tpl',
+            'contact_form' => '_contact_form.tpl',
+            'contact_info' => '_contact_info.tpl',
         )
     ),
     // Minor functions. We just include file necessary for registry here, needless file consume more resource

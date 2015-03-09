@@ -2,9 +2,6 @@
 // This file store logical directory and php file and configuration variable
 // Use for server configuration
 
-// Enable Navigation
-define('NAVIGATION',true);
-
 // SITE_ROOT contains the full path to the tshirtshop folder
 define('SITE_ROOT',dirname(dirname(__FILE__)));
 

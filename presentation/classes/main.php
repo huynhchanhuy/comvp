@@ -18,22 +18,15 @@ class Main extends Base {
         // Because main page doesnt have any plugin
         // $this->mIncludedTemplate = $this->mConfig['main'];
         $modules = Root::getConfig()->main['modules'];
-
+        
         #$this->$mPageTitle = 
         $this->mContentsCell = $modules[0].TPL;
         // check query string
-        if (isset($_GET['nav']) && array_key_exists($_GET['nav'], $modules)) {
-            foreach ($modules as $module)
-            {
-                if ($_GET['nav'] === $module) {
-                   $this->mPageTitle = Root::getConfig()->$module['captions'][0];
-                   $this->mContentsCell = $module.TPL;
-                    break;
-                }
-            }
+        if (isset($_GET['nav']) && in_array($_GET['nav'], $modules)) {
+           $this->mPageTitle = Root::getConfig()->{$_GET['nav']}['captions'];
+           $this->mContentsCell = $_GET['nav'].TPL;
         }
-        else
-        {
+        else {
             // redirect to 404 page
         }
     }
