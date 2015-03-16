@@ -76,3 +76,17 @@ define('NAV_HOME_VALUE', 'Trang Chủ');
 define('NAV_CONTACT_VALUE', 'Liên Hệ');
 define('NAV_MENU_VALUE', 'Món Ăn');
 define('NAV_ABOUTUS_VALUE', 'Giới Thiệu');
+
+#Error Type
+define('LOGIN_MSG',1);
+
+#Error Code
+define('LOGIN_SUCCESS',0);
+define('US_INVALID',101);
+define('US_BLANK',102);
+define('PASSWD_INVALID',201);
+define('PASSWD_BLANK',202);
+
+#Error Msg
+define('LOGIN'.US_INVALID,'Tên đăng nhập không hợp lệ');
+define('LOGIN'.US_BLANK,'Bạn chưa điền tên đăng nhập');

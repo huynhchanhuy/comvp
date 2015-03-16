@@ -33,7 +33,7 @@
         <div class="row">
             <div class="col-sm-4">
                 <div class="logo pull-left">
-                    <a href="index.html"><img src="{#logo_dir#}" alt="" /></a>
+                    <a href="{$obj->mLogoUrl}"><img src="{#logo_dir#}" alt="" /></a>
                 </div>
                 <div class="btn-group pull-right">
 
@@ -42,11 +42,14 @@
             <div class="col-sm-8">
                 <div class="shop-menu pull-right">
                     <ul class="nav navbar-nav">
-                        <li><a href="#"><i class="fa fa-user"></i> Account</a></li>
                         <li><a href="#"><i class="fa fa-star"></i> Wishlist</a></li>
                         <li><a href="presentation\templates\checkout.html"><i class="fa fa-crosshairs"></i> Checkout</a></li>
                         <li><a href="presentation\templates\cart.html"><i class="fa fa-shopping-cart"></i> Cart</a></li>
-                        <li><a href="{$obj->mNavigation.login.url}" class="{$obj->mNavigation.login.attr}"><i class="fa fa-lock"></i> Login</a></li>
+                        {if !isset($smarty.session.us)}
+                            <li><a href="{$obj->mNavigation.login.url}" class="{$obj->mNavigation.login.attr}"><i class="fa fa-lock"></i> Login</a></li>
+                        {else}
+                            <li><a href="#"><i class="fa fa-user"></i> $smarty.session.us</a></li>
+                        {/if}
                     </ul>
                 </div>
             </div>

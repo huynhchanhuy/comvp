@@ -1,4 +1,4 @@
-<?php /* Smarty version 2.6.28, created on 2015-03-09 19:43:47
+<?php /* Smarty version 2.6.28, created on 2015-03-16 18:15:11
          compiled from main/_header.tpl */ ?>
 <?php require_once(SMARTY_CORE_DIR . 'core.load_plugins.php');
 smarty_core_load_plugins(array('plugins' => array(array('function', 'load_presentation_object', 'main/_header.tpl', 2, false),)), $this); ?>
@@ -31,7 +31,8 @@ smarty_core_load_plugins(array('plugins' => array(array('function', 'load_presen
         <div class="row">
             <div class="col-sm-4">
                 <div class="logo pull-left">
-                    <a href="index.html"><img src="<?php echo $this->_config[0]['vars']['logo_dir']; ?>
+                    <a href="<?php echo $this->_tpl_vars['obj']->mLogoUrl; ?>
+"><img src="<?php echo $this->_config[0]['vars']['logo_dir']; ?>
 " alt="" /></a>
                 </div>
                 <div class="btn-group pull-right">
@@ -41,13 +42,16 @@ smarty_core_load_plugins(array('plugins' => array(array('function', 'load_presen
             <div class="col-sm-8">
                 <div class="shop-menu pull-right">
                     <ul class="nav navbar-nav">
-                        <li><a href="#"><i class="fa fa-user"></i> Account</a></li>
                         <li><a href="#"><i class="fa fa-star"></i> Wishlist</a></li>
                         <li><a href="presentation\templates\checkout.html"><i class="fa fa-crosshairs"></i> Checkout</a></li>
                         <li><a href="presentation\templates\cart.html"><i class="fa fa-shopping-cart"></i> Cart</a></li>
-                        <li><a href="<?php echo $this->_tpl_vars['obj']->mNavigation['login']['url']; ?>
+                        <?php if (! isset ( $_SESSION['us'] )): ?>
+                            <li><a href="<?php echo $this->_tpl_vars['obj']->mNavigation['login']['url']; ?>
 " class="<?php echo $this->_tpl_vars['obj']->mNavigation['login']['attr']; ?>
 "><i class="fa fa-lock"></i> Login</a></li>
+                        <?php else: ?>
+                            <li><a href="#"><i class="fa fa-user"></i> $smarty.session.us</a></li>
+                        <?php endif; ?>
                     </ul>
                 </div>
             </div>

@@ -2,6 +2,9 @@
     // Activate session
     session_start();
     
+    // Start output buffer
+    ob_start();
+    
     // Include utility files
     require_once './include/config.php';
     require_once PRESENTATION_DIR.'core.php';
@@ -13,3 +16,10 @@
     $application->createWebsite();
     // Close database connection
     DatabaseHandler::Close();
+    
+    // Output content from the buffer
+    flush();
+    ob_flush();
+    ob_end_clean();
+    
+    

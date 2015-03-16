@@ -1,4 +1,4 @@
-<?php /* Smarty version 2.6.28, created on 2015-03-09 19:53:58
+<?php /* Smarty version 2.6.28, created on 2015-03-16 19:48:18
          compiled from login/_login_form.tpl */ ?>
 <?php require_once(SMARTY_CORE_DIR . 'core.load_plugins.php');
 smarty_core_load_plugins(array('plugins' => array(array('function', 'load_presentation_object', 'login/_login_form.tpl', 2, false),)), $this); ?>
@@ -6,14 +6,21 @@ smarty_core_load_plugins(array('plugins' => array(array('function', 'load_presen
 
 
 <div class="login-form"><!--login form-->
-        <h2>Đăng Nhập</h2>
-        <form action="#">
-                <input type="text" placeholder="Name" />
-                <input type="email" placeholder="Email Address" />
-                <span>
-                        <input type="checkbox" class="checkbox"> 
-                        Nhớ trạng thái đăng nhập
-                </span>
-                <button type="submit" class="btn btn-default">Đăng nhập</button>
-        </form>
+    <h2>Đăng Nhập</h2>
+    <form action="<?php echo $this->_tpl_vars['obj']->mLinkToLogin; ?>
+" method="POST">
+        <div class="<?php echo $this->_tpl_vars['obj']->mLoginClass; ?>
+">
+            <input class="form-control" autofocus="true" name="us" type="text" placeholder="Tên đăng nhập" />
+            <input class="form-control" name="pw" type="password" placeholder="Mật khẩu" />
+            <span>
+                <input type="checkbox" class="checkbox"> 
+                Nhớ trạng thái đăng nhập
+            </span>
+            <button type="submit" class="btn btn-default">Đăng nhập</button>
+
+            <span class="help-block"><?php echo $this->_tpl_vars['obj']->mErrMsg; ?>
+</span>
+        </div>
+    </form>
 </div><!--/login form-->
