@@ -32,41 +32,44 @@ class Link {
         return htmlspecialchars($link, ENT_QUOTES);
     }
 
-    public static function ToNavigation($nav) {
-        $link = 'index.php?nav=' . $nav;
-        return self::Build($link);
-    }
-
     // Prepares a string to be included in an URL
     public static function CleanUrlText($string) {
         // Remove all characters that aren't a-z, 0-9, dash, underscore or space
         $not_acceptable_characters_regex = '#[^-a-zA-Z0-9_ ]#';
         $string = preg_replace($not_acceptable_characters_regex, '', $string);
-        
+
         // Remove all leading and trailing spaces
         $string = trim($string);
-        
+
         // Change all dashes, underscores and spaces to dashes
         $string = preg_replace('#[-_ ]+#', '-', $string);
-        
+
         // Return the modified string
         return strtolower($string);
     }
     
-    // Create link to login page
-    public static function ToLogin()
-    {
-        $link='index.php?nav=login&type=login';
-        return self::Build($link);
+    public static function ToAdmin() {
+        return self::Build('admin.php?admin');
     }
     
-    public static function ToLoginResult($errcode=0)
-    {
-        if($errcode === 0){
-            $link='';
-        }
-        else {
-            $link='index.php?nav=login&result='.$errcode;
+    public static function ToNavigation($nav) {
+        return self::Build('index.php?nav=' . $nav);
+    }
+
+    public static function To404() {
+        return self::Build('404.html');
+    }
+
+    // Create link to login page
+    public static function ToLogin() {
+        return self::Build('index.php?nav=login&type=login');
+    }
+
+    public static function ToLoginResult($errcode = 0) {
+        if ($errcode === 0) {
+            $link = '';
+        } else {
+            $link = 'index.php?nav=login&result=' . $errcode;
         }
         return self::Build($link);
     }
@@ -117,7 +120,6 @@ class Link {
 //            exit();
 //        }
 //    }
-
 //    public static function ToDepartment($departmentId,$page = 1)
 //    {
 //        $link = 'index.php?DepartmentId=' . $departmentId;

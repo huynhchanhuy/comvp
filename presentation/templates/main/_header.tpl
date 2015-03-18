@@ -48,7 +48,11 @@
                         {if !isset($smarty.session.us)}
                             <li><a href="{$obj->mNavigation.login.url}" class="{$obj->mNavigation.login.attr}"><i class="fa fa-lock"></i> Login</a></li>
                         {else}
-                            <li><a href="#"><i class="fa fa-user"></i> $smarty.session.us</a></li>
+                            {if $smarty.session.lv == 1}
+                                <li><a href="#"><i class="fa fa-user"></i> {$smarty.session.us}</a></li>
+                            {else}
+                                <li><a href="$obj->mAdminPage"><i class="fa fa-user"></i> {$smarty.session.lv}</a></li>
+                            {/if}
                         {/if}
                     </ul>
                 </div>

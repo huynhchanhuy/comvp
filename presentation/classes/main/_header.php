@@ -15,6 +15,7 @@ class Header extends Base {
     public function __construct($module,$filename) {
         parent::__construct($module,$filename);
         $this->mLogoUrl = Link::Build('');
+        $this->mAdminPage = 
 //        $home_class = $this->mIncludedTemplate['home']['attrs']['class'];
 //        $contact_class = $this->mIncludedTemplate['contact']['attrs']['class'];
 //        $menu_class = $this->mIncludedTemplate['menu']['attrs']['class'];

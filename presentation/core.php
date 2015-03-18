@@ -79,8 +79,13 @@ class Root{
         // Load the application page template
         require_once PRESENTATION_DIR.'base.php';
         require_once PRESENTATION_DIR.'application.php';
-        require_once PRESENTATION_DIR.'link.php'; // Link Factory
-        require_once BUSINESS_DIR . 'database_handler.php';// Load the database handler
-        require_once BUSINESS_DIR . 'catalog.php';// Load Business Tier
+        // Link Factory
+        require_once PRESENTATION_DIR.'link.php'; 
+        // Load the database handler
+        require_once BUSINESS_DIR . 'database_handler.php';
+        // Load Business Tier
+        require_once BUSINESS_DIR . 'catalog.php';
+        require_once BUSINESS_DIR . 'password_hasher.php';
+        require_once BUSINESS_DIR . 'customer.php';
     }
 }

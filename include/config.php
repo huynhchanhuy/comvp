@@ -46,9 +46,9 @@ define('SITE_GENERIC_ERROR_MESSAGE','<h1>TShirtShop Error!</h1>');
 // Database connectivity setup
 define('DB_PERSISTENCY','true');
 define('DB_SERVER','localhost');
-define('DB_USERNAME','localsu');
-define('DB_PASSWORD','localsu');
-define('DB_DATABASE','tshirtshop');
+define('DB_USERNAME','root');
+define('DB_PASSWORD','');
+define('DB_DATABASE','comvp');
 define('PDO_DSN','mysql:host=' . DB_SERVER . ';dbname=' . DB_DATABASE);
 
 // Server HTTP port (can omit if the default 80 is used)
@@ -63,6 +63,8 @@ define('VIRTUAL_LOCATION','/eshopper/');
 define('SHORT_PRODUCT_DESCRIPTION_LENGTH',150);
 define('PRODUCTS_PER_PAGE',4);
 
+// Random value used for hashing
+define('HASH_PREFIX', 'K1-');
 # ------------
 # 
 #Module file
@@ -90,3 +92,5 @@ define('PASSWD_BLANK',202);
 #Error Msg
 define('LOGIN'.US_INVALID,'Tên đăng nhập không hợp lệ');
 define('LOGIN'.US_BLANK,'Bạn chưa điền tên đăng nhập');
+define('LOGIN'.PASSWD_INVALID,'Mật khẩu không hợp lệ');
+define('LOGIN'.PASSWD_BLANK,'Bạn chưa điền tên mật khẩu');
