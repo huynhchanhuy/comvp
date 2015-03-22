@@ -6,8 +6,8 @@
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <meta name="description" content="">
-        <meta name="author" content="">
+        <meta name="description" content="Com van phong">
+        <meta name="author" content="Huy Huynh">
         <title>{$obj->mPageTitle} | {#site_title#}</title>
         <link href="{#frontpage_css_dir#}bootstrap.min.css" rel="stylesheet">
         <link href="{#frontpage_css_dir#}font-awesome.min.css" rel="stylesheet">

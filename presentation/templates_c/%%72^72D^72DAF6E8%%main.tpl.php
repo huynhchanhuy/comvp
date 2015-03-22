@@ -1,4 +1,4 @@
-<?php /* Smarty version 2.6.28, created on 2015-03-22 10:45:33
+<?php /* Smarty version 2.6.28, created on 2015-03-22 17:10:09
          compiled from main.tpl */ ?>
 <?php require_once(SMARTY_CORE_DIR . 'core.load_plugins.php');
 smarty_core_load_plugins(array('plugins' => array(array('function', 'config_load', 'main.tpl', 2, false),array('function', 'load_presentation_object', 'main.tpl', 3, false),array('modifier', 'cat', 'main.tpl', 33, false),)), $this); ?>
@@ -11,8 +11,8 @@ smarty_core_load_plugins(array('plugins' => array(array('function', 'config_load
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <meta name="description" content="">
-        <meta name="author" content="">
+        <meta name="description" content="Com van phong">
+        <meta name="author" content="Huy Huynh">
         <title><?php echo $this->_tpl_vars['obj']->mPageTitle; ?>
  | <?php echo $this->_config[0]['vars']['site_title']; ?>
 </title>

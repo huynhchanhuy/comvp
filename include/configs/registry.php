@@ -53,6 +53,17 @@ return array(
                 ),
         ),
     ),
+    'admin' => array(
+        'value' => 'admin',
+        'modules' => array('order','menudish','dish','info','anwser'), 
+        //order:check,unchecked - menu:manage,create,update,delete, dish:manage,create,update,delete info: aboutus,guide,fag - anwser:answered and unanswered
+        'layouts' => array(
+            'left_sidebar' => array(
+                'name' => '_left_sidebar.tpl',
+                'layouts' => array()
+            ) 
+        )
+    ),
     // Primary module, must be place in default structure
     'home' => array(
         'value' => 0,
