@@ -34,7 +34,28 @@ class Application extends Smarty{
     {
         $this->initRegistry();
         $this->initUtils(Root::getConfig()->utils);
+        if(isset($_GET['admin']))
+            $this->createAdminPage();
+        elseif(isset($_GET['page404']))
+            $this->create404Page();
+        else
+            $this->createFrontPage();
+        $this->execAdditionalUtils();
+    }
+    
+    public function createAdminPage(){
+        $this->display('admin.tpl');
+    }
+    
+    public function createFrontPage(){
         $this->display('main.tpl');
+    }
+    
+    public function create404Page(){
+        $this->display('page404.tpl');
+    }
+    
+    public function execAdditionalUtils(){
         Root::getUtils()->timePassThrought->TimeMeasured(true); 
     }
     

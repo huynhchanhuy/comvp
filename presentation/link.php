@@ -49,7 +49,7 @@ class Link {
     }
     
     public static function ToAdmin() {
-        return self::Build('admin.php?admin');
+        return self::Build('index.php?admin');
     }
     
     public static function ToNavigation($nav) {
@@ -57,7 +57,7 @@ class Link {
     }
 
     public static function To404() {
-        return self::Build('404.html');
+        return self::Build('index.php?page404');
     }
 
     // Create link to login page

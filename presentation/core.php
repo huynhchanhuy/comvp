@@ -84,7 +84,7 @@ class Root{
         // Load the database handler
         require_once BUSINESS_DIR . 'database_handler.php';
         // Load Business Tier
-        require_once BUSINESS_DIR . 'catalog.php';
+        #require_once BUSINESS_DIR . 'catalog.php';
         require_once BUSINESS_DIR . 'password_hasher.php';
         require_once BUSINESS_DIR . 'customer.php';
     }
