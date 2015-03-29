@@ -33,6 +33,9 @@ class Base {
            }
            $this->mIncludedTemplate['layouts'] = Root::getConfig()->main['layouts'];
        }
+       else if($len === 1 && $module[0] === 'admin'){
+           
+       }
        else
        {
            $module_array_path="";

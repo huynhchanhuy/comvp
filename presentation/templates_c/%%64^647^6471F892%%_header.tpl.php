@@ -1,4 +1,4 @@
-<?php /* Smarty version 2.6.28, created on 2015-03-22 09:52:46
+<?php /* Smarty version 2.6.28, created on 2015-03-28 17:59:46
          compiled from main/_header.tpl */ ?>
 <?php require_once(SMARTY_CORE_DIR . 'core.load_plugins.php');
 smarty_core_load_plugins(array('plugins' => array(array('function', 'load_presentation_object', 'main/_header.tpl', 2, false),)), $this); ?>
@@ -42,13 +42,17 @@ smarty_core_load_plugins(array('plugins' => array(array('function', 'load_presen
             <div class="col-sm-8">
                 <div class="shop-menu pull-right">
                     <ul class="nav navbar-nav">
-                        <li><a href="#"><i class="fa fa-star"></i> Wishlist</a></li>
-                        <li><a href="presentation\templates\checkout.html"><i class="fa fa-crosshairs"></i> Checkout</a></li>
-                        <li><a href="presentation\templates\cart.html"><i class="fa fa-shopping-cart"></i> Cart</a></li>
+                        
+                        <?php if (! isset ( $_SESSION['us'] ) || $_SESSION['lv'] != 1): ?>
+                            <li><a href="#"><i class="fa fa-star"></i> Wishlist</a></li>
+                            <li><a href="presentation\templates\checkout.html"><i class="fa fa-crosshairs"></i> Checkout</a></li>
+                            <li><a href="presentation\templates\cart.html"><i class="fa fa-shopping-cart"></i> Cart</a></li>
+                        <?php endif; ?>
+                        
                         <?php if (! isset ( $_SESSION['us'] )): ?>
                             <li><a href="<?php echo $this->_tpl_vars['obj']->mNavigation['login']['url']; ?>
 " class="<?php echo $this->_tpl_vars['obj']->mNavigation['login']['attr']; ?>
-"><i class="fa fa-lock"></i> Login</a></li>
+"><i class="fa fa-lock"></i> Đăng Nhập</a></li>
                         <?php else: ?>
                             <?php if ($_SESSION['lv'] == 1): ?>
                                 <li><a href="#"><i class="fa fa-user"></i> <?php echo $_SESSION['us']; ?>
@@ -57,6 +61,8 @@ smarty_core_load_plugins(array('plugins' => array(array('function', 'load_presen
                                 <li><a href="$obj->mAdminPage"><i class="fa fa-user"></i> <?php echo $_SESSION['lv']; ?>
 </a></li>
                             <?php endif; ?>
+                            <li><a href="<?php echo $this->_tpl_vars['obj']->mNavigation['logouturl']; ?>
+"  onclick="return confirm('Bạn muốn đăng xuất ngay bây giờ?');"><i class="fa fa-unlock"></i> Thoát</a></li>
                         <?php endif; ?>
                     </ul>
                 </div>

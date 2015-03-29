@@ -33,8 +33,11 @@ class LoginForm {
             // Submit login
             if (isset($_GET['type']) && $_GET['type'] === 'login') {
                 if (isset($_POST['us']) && trim($_POST['us']) != '') {
-                    if (isset($_POST['pw']) && trim($_POST['pw']) != '') {
-                        $check = Customer::IsValid($_POST['us'], $_POST['pw']);
+                    if (isset($_POST['pw']) && trim($_POST['pw']) != '') { 
+                        if(isset($_POST['rmbme']))
+                            $check = Authentication::IsValid($_POST['us'], $_POST['pw'],true);
+                        else
+                            $check = Authentication::IsValid($_POST['us'], $_POST['pw'],false);
                         switch ($check) {
                             case 0:
                                 header('HTTP/1.1 302 Login Successs');

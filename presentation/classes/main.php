@@ -33,7 +33,13 @@ class Main extends Base {
     
     // Class constructor
     public function init() {
-        
+        if (isset($_GET['logout']))
+        {
+            Authentication::Logout ();
+            header('HTTP/1.1 302 Logout Successs');
+            header('Location: ' . Link::Build(''));
+        }
+        Authentication::AutoLogin();
     }
 
 //    // Initialize presentation object

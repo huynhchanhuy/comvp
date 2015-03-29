@@ -52,7 +52,8 @@ class Header extends Base {
                 'attr'  => $attr['aboutus']),
             'login'     => array(
                 'url'   =>  Link::ToNavigation('login'), 
-                'attr'  => $attr['login'])
+                'attr'  => $attr['login']),
+            'logouturl'    => Link::ToLogout(),
         );
         
     }

@@ -4,12 +4,6 @@
  * and open the template in the editor.
  */
 
-$(document).ready(function(){
-	$(function () {
-            $("#today").html($("#today").html()+getDateTime());
-        });
-});
-
 function getDateTime() {
     var now     = new Date(); 
     var year    = now.getFullYear();

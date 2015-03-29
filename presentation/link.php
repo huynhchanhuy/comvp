@@ -64,6 +64,11 @@ class Link {
     public static function ToLogin() {
         return self::Build('index.php?nav=login&type=login');
     }
+    
+    // Create link to logout page
+    public static function ToLogout() {
+        return self::Build('index.php?logout');
+    }
 
     public static function ToLoginResult($errcode = 0) {
         if ($errcode === 0) {

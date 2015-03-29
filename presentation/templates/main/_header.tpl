@@ -42,17 +42,22 @@
             <div class="col-sm-8">
                 <div class="shop-menu pull-right">
                     <ul class="nav navbar-nav">
-                        <li><a href="#"><i class="fa fa-star"></i> Wishlist</a></li>
-                        <li><a href="presentation\templates\checkout.html"><i class="fa fa-crosshairs"></i> Checkout</a></li>
-                        <li><a href="presentation\templates\cart.html"><i class="fa fa-shopping-cart"></i> Cart</a></li>
+                        
+                        {if !isset($smarty.session.us) || $smarty.session.lv != 1}
+                            <li><a href="#"><i class="fa fa-star"></i> Wishlist</a></li>
+                            <li><a href="presentation\templates\checkout.html"><i class="fa fa-crosshairs"></i> Checkout</a></li>
+                            <li><a href="presentation\templates\cart.html"><i class="fa fa-shopping-cart"></i> Cart</a></li>
+                        {/if}
+                        
                         {if !isset($smarty.session.us)}
-                            <li><a href="{$obj->mNavigation.login.url}" class="{$obj->mNavigation.login.attr}"><i class="fa fa-lock"></i> Login</a></li>
+                            <li><a href="{$obj->mNavigation.login.url}" class="{$obj->mNavigation.login.attr}"><i class="fa fa-lock"></i> Đăng Nhập</a></li>
                         {else}
                             {if $smarty.session.lv == 1}
                                 <li><a href="#"><i class="fa fa-user"></i> {$smarty.session.us}</a></li>
                             {else}
                                 <li><a href="$obj->mAdminPage"><i class="fa fa-user"></i> {$smarty.session.lv}</a></li>
                             {/if}
+                            <li><a href="{$obj->mNavigation.logouturl}"  onclick="return confirm('Bạn muốn đăng xuất ngay bây giờ?');"><i class="fa fa-unlock"></i> Thoát</a></li>
                         {/if}
                     </ul>
                 </div>

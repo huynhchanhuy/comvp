@@ -1,4 +1,4 @@
-<?php /* Smarty version 2.6.28, created on 2015-03-16 19:48:18
+<?php /* Smarty version 2.6.28, created on 2015-03-28 18:54:21
          compiled from login/_login_form.tpl */ ?>
 <?php require_once(SMARTY_CORE_DIR . 'core.load_plugins.php');
 smarty_core_load_plugins(array('plugins' => array(array('function', 'load_presentation_object', 'login/_login_form.tpl', 2, false),)), $this); ?>
@@ -14,7 +14,7 @@ smarty_core_load_plugins(array('plugins' => array(array('function', 'load_presen
             <input class="form-control" autofocus="true" name="us" type="text" placeholder="Tên đăng nhập" />
             <input class="form-control" name="pw" type="password" placeholder="Mật khẩu" />
             <span>
-                <input type="checkbox" class="checkbox"> 
+                <input type="checkbox" name="rmbme" value="rmbme" class="checkbox"> 
                 Nhớ trạng thái đăng nhập
             </span>
             <button type="submit" class="btn btn-default">Đăng nhập</button>
