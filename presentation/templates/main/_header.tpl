@@ -52,11 +52,7 @@
                         {if !isset($smarty.session.us)}
                             <li><a href="{$obj->mNavigation.login.url}" class="{$obj->mNavigation.login.attr}"><i class="fa fa-lock"></i> Đăng Nhập</a></li>
                         {else}
-                            {if $smarty.session.lv == 1}
-                                <li><a href="#"><i class="fa fa-user"></i> {$smarty.session.us}</a></li>
-                            {else}
-                                <li><a href="$obj->mAdminPage"><i class="fa fa-user"></i> {$smarty.session.lv}</a></li>
-                            {/if}
+                            <li><a href="{$obj->mUserPage}"><i class="fa fa-user"></i> {$smarty.session.us}</a></li>
                             <li><a href="{$obj->mNavigation.logouturl}"  onclick="return confirm('Bạn muốn đăng xuất ngay bây giờ?');"><i class="fa fa-unlock"></i> Thoát</a></li>
                         {/if}
                     </ul>

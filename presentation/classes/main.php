@@ -27,7 +27,7 @@ class Main extends Base {
            $this->mContentsCell = $_GET['nav'].TPL;
         }
         else {
-            // redirect to 404 page
+            // redirect to 404 page - need to fix url
         }
     }
     

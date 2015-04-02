@@ -1,7 +1,7 @@
-<?php /* Smarty version 2.6.28, created on 2015-03-22 19:39:44
+<?php /* Smarty version 2.6.28, created on 2015-04-02 21:08:26
          compiled from admin.tpl */ ?>
 <?php require_once(SMARTY_CORE_DIR . 'core.load_plugins.php');
-smarty_core_load_plugins(array('plugins' => array(array('function', 'config_load', 'admin.tpl', 2, false),array('function', 'load_presentation_object', 'admin.tpl', 3, false),array('modifier', 'cat', 'admin.tpl', 55, false),)), $this); ?>
+smarty_core_load_plugins(array('plugins' => array(array('function', 'config_load', 'admin.tpl', 2, false),array('function', 'load_presentation_object', 'admin.tpl', 3, false),array('modifier', 'cat', 'admin.tpl', 58, false),)), $this); ?>
 <?php echo smarty_function_config_load(array('file' => "site.conf"), $this);?>
 
 <?php echo smarty_function_load_presentation_object(array('filename' => 'admin.tpl','assign' => 'obj'), $this);?>
@@ -17,7 +17,9 @@ smarty_core_load_plugins(array('plugins' => array(array('function', 'config_load
         <meta name="description" content="">
         <meta name="author" content="Huy Huynh">
 
-        <title>Administrator</title>
+        <title><?php echo $this->_tpl_vars['obj']->mPageTitle; ?>
+ <?php if (isset ( $this->_tpl_vars['obj']->mPageTitle )): ?>|<?php endif; ?> <?php echo $this->_config[0]['vars']['site_title']; ?>
+</title>
 
         <!-- Bootstrap Core CSS -->
         <link href="<?php echo $this->_config[0]['vars']['adminpage_style_dir']; ?>
@@ -60,6 +62,9 @@ bower_components/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="t
             <nav class="navbar navbar-default navbar-static-top" role="navigation" style="margin-bottom: 0">
                 <div class="navbar-header">
                     <a class="navbar-brand" href="index.html">Khu Vực Quản Lý Website</a>
+                </div>
+                <div class="navbar-header" style="float:right">
+                    <a class="navbar-brand" href="index.html" style="color: #0088cc"><i class="fa fa-long-arrow-left fa-fw"></i> <i>Quay Về Trang Chủ</i></a>
                 </div>
                 <!-- /.navbar-header -->
 

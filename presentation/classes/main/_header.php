@@ -14,17 +14,18 @@ class Header extends Base {
 
     public function __construct($module,$filename) {
         parent::__construct($module,$filename);
-        $this->mLogoUrl = Link::Build('');
-        $this->mAdminPage = 
-//        $home_class = $this->mIncludedTemplate['home']['attrs']['class'];
-//        $contact_class = $this->mIncludedTemplate['contact']['attrs']['class'];
-//        $menu_class = $this->mIncludedTemplate['menu']['attrs']['class'];
-//        $aboutus_class = $this->mIncludedTemplate['aboutus']['attrs']['class'];
+        
         $home_class='';
         $contact_class='';
         $menu_class='';
         $aboutus_class='dropdown';
         $login_class='';
+        
+        $this->mLogoUrl = Link::Build('');
+        if($_SESSION['lv'] === '1')
+            $this->mUserPage = Link::ToAdmin();
+        else 
+            $this->mUserPage = Link::ToUserProfile();
         
         if(isset($_GET['nav']) && $_GET['nav'] == 'contact')
             $attr = array('home'=>$home_class,'contact'=>$contact_class.' active','menu'=>$menu_class,'aboutus'=>$aboutus_class,'login'=>$login_class);

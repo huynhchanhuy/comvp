@@ -12,7 +12,7 @@
         <meta name="description" content="">
         <meta name="author" content="Huy Huynh">
 
-        <title>Administrator</title>
+        <title>{$obj->mPageTitle} {if isset($obj->mPageTitle)}|{/if} {#site_title#}</title>
 
         <!-- Bootstrap Core CSS -->
         <link href="{#adminpage_style_dir#}bower_components/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
@@ -49,6 +49,9 @@
             <nav class="navbar navbar-default navbar-static-top" role="navigation" style="margin-bottom: 0">
                 <div class="navbar-header">
                     <a class="navbar-brand" href="index.html">Khu Vực Quản Lý Website</a>
+                </div>
+                <div class="navbar-header" style="float:right">
+                    <a class="navbar-brand" href="index.html" style="color: #0088cc"><i class="fa fa-long-arrow-left fa-fw"></i> <i>Quay Về Trang Chủ</i></a>
                 </div>
                 <!-- /.navbar-header -->
 

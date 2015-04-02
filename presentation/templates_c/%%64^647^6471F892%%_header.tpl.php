@@ -1,4 +1,4 @@
-<?php /* Smarty version 2.6.28, created on 2015-03-28 17:59:46
+<?php /* Smarty version 2.6.28, created on 2015-04-02 20:41:22
          compiled from main/_header.tpl */ ?>
 <?php require_once(SMARTY_CORE_DIR . 'core.load_plugins.php');
 smarty_core_load_plugins(array('plugins' => array(array('function', 'load_presentation_object', 'main/_header.tpl', 2, false),)), $this); ?>
@@ -54,13 +54,9 @@ smarty_core_load_plugins(array('plugins' => array(array('function', 'load_presen
 " class="<?php echo $this->_tpl_vars['obj']->mNavigation['login']['attr']; ?>
 "><i class="fa fa-lock"></i> Đăng Nhập</a></li>
                         <?php else: ?>
-                            <?php if ($_SESSION['lv'] == 1): ?>
-                                <li><a href="#"><i class="fa fa-user"></i> <?php echo $_SESSION['us']; ?>
+                            <li><a href="<?php echo $this->_tpl_vars['obj']->mUserPage; ?>
+"><i class="fa fa-user"></i> <?php echo $_SESSION['us']; ?>
 </a></li>
-                            <?php else: ?>
-                                <li><a href="$obj->mAdminPage"><i class="fa fa-user"></i> <?php echo $_SESSION['lv']; ?>
-</a></li>
-                            <?php endif; ?>
                             <li><a href="<?php echo $this->_tpl_vars['obj']->mNavigation['logouturl']; ?>
 "  onclick="return confirm('Bạn muốn đăng xuất ngay bây giờ?');"><i class="fa fa-unlock"></i> Thoát</a></li>
                         <?php endif; ?>

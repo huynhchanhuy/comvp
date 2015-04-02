@@ -52,6 +52,10 @@ class Link {
         return self::Build('index.php?admin');
     }
     
+    public static function ToUserProfile() {
+        return self::Build('index.php');
+    }
+    
     public static function ToNavigation($nav) {
         return self::Build('index.php?nav=' . $nav);
     }
