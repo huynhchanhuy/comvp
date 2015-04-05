@@ -1,10 +1,10 @@
-<?php /* Smarty version 2.6.28, created on 2015-04-02 21:08:26
+<?php /* Smarty version 2.6.28, created on 2015-04-05 16:39:23
          compiled from admin.tpl */ ?>
 <?php require_once(SMARTY_CORE_DIR . 'core.load_plugins.php');
 smarty_core_load_plugins(array('plugins' => array(array('function', 'config_load', 'admin.tpl', 2, false),array('function', 'load_presentation_object', 'admin.tpl', 3, false),array('modifier', 'cat', 'admin.tpl', 58, false),)), $this); ?>
 <?php echo smarty_function_config_load(array('file' => "site.conf"), $this);?>
 
-<?php echo smarty_function_load_presentation_object(array('filename' => 'admin.tpl','assign' => 'obj'), $this);?>
+<?php echo smarty_function_load_presentation_object(array('filename' => 'admin.tpl','family' => 0,'assign' => 'obj'), $this);?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -61,15 +61,17 @@ bower_components/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="t
             <!-- Navigation -->
             <nav class="navbar navbar-default navbar-static-top" role="navigation" style="margin-bottom: 0">
                 <div class="navbar-header">
-                    <a class="navbar-brand" href="index.html">Khu Vực Quản Lý Website</a>
+                    <a class="navbar-brand" href="<?php echo $this->_tpl_vars['obj']->mAdminUrl; ?>
+">Khu Vực Quản Lý Website</a>
                 </div>
                 <div class="navbar-header" style="float:right">
-                    <a class="navbar-brand" href="index.html" style="color: #0088cc"><i class="fa fa-long-arrow-left fa-fw"></i> <i>Quay Về Trang Chủ</i></a>
+                    <a class="navbar-brand" href="<?php echo $this->_tpl_vars['obj']->mSiteUrl; ?>
+" style="color: #0088cc"><i class="fa fa-long-arrow-left fa-fw"></i> <i>Quay Về Trang Chủ</i></a>
                 </div>
                 <!-- /.navbar-header -->
 
                 <?php $_smarty_tpl_vars = $this->_tpl_vars;
-$this->_smarty_include(array('smarty_include_tpl_file' => ((is_array($_tmp=((is_array($_tmp=$this->_tpl_vars['this']['filename'])) ? $this->_run_mod_handler('cat', true, $_tmp, "/") : smarty_modifier_cat($_tmp, "/")))) ? $this->_run_mod_handler('cat', true, $_tmp, "_left_sidebar.tpl") : smarty_modifier_cat($_tmp, "_left_sidebar.tpl")), 'smarty_include_vars' => array()));
+$this->_smarty_include(array('smarty_include_tpl_file' => ((is_array($_tmp=((is_array($_tmp=$this->_tpl_vars['obj']->filename)) ? $this->_run_mod_handler('cat', true, $_tmp, "/") : smarty_modifier_cat($_tmp, "/")))) ? $this->_run_mod_handler('cat', true, $_tmp, "_left_sidebar.tpl") : smarty_modifier_cat($_tmp, "_left_sidebar.tpl")), 'smarty_include_vars' => array()));
 $this->_tpl_vars = $_smarty_tpl_vars;
 unset($_smarty_tpl_vars);
  ?>
@@ -78,7 +80,7 @@ unset($_smarty_tpl_vars);
 
             <div id="page-wrapper">
                 <?php $_smarty_tpl_vars = $this->_tpl_vars;
-$this->_smarty_include(array('smarty_include_tpl_file' => ((is_array($_tmp=((is_array($_tmp=$this->_tpl_vars['this']['filename'])) ? $this->_run_mod_handler('cat', true, $_tmp, "/") : smarty_modifier_cat($_tmp, "/")))) ? $this->_run_mod_handler('cat', true, $_tmp, "_content.tpl") : smarty_modifier_cat($_tmp, "_content.tpl")), 'smarty_include_vars' => array()));
+$this->_smarty_include(array('smarty_include_tpl_file' => ((is_array($_tmp=((is_array($_tmp=$this->_tpl_vars['obj']->filename)) ? $this->_run_mod_handler('cat', true, $_tmp, "/") : smarty_modifier_cat($_tmp, "/")))) ? $this->_run_mod_handler('cat', true, $_tmp, "_content.tpl") : smarty_modifier_cat($_tmp, "_content.tpl")), 'smarty_include_vars' => array()));
 $this->_tpl_vars = $_smarty_tpl_vars;
 unset($_smarty_tpl_vars);
  ?>

@@ -11,50 +11,32 @@
  *
  * @author Huy
  */
-
 class Base {
-    protected $filename;
+
+    public $filename;
     public $mIncludedTemplate;
-    #protected $filehistory;
-    // Future modified: have filehistory
-    // Class extend from base will not have __construct declaration except main.php
-   public function __construct($module,$filename) {
-//       var_dump($module);
-       $this->filename = $filename;
-       $plugins = PLUGIN;
-       $len = sizeof($module);
-       if($len === 1 && $module[0] === 'main')
-       {
-           // $main_modules = $this->mConfig['main']['modules'];
-           $main_modules = Root::getConfig()->main['modules'];
-           foreach($main_modules as $mod_item)
-           {
+
+    public function __construct($filename, $family, $ancestor = 0) {
+        $this->filename = $filename;
+        // Check if ancestor is this current page
+        if ($ancestor === 1) {
+            // Get this ancestor module
+            $main_modules = Root::getConfig()->{$filename}['modules'];
+            foreach ($main_modules as $mod_item) {
                 $this->mIncludedTemplate[$mod_item] = Root::getConfig()->$mod_item;
-           }
-           $this->mIncludedTemplate['layouts'] = Root::getConfig()->main['layouts'];
-       }
-       else if($len === 1 && $module[0] === 'admin'){
-           
-       }
-       else
-       {
-           $module_array_path="";
-           for($i=1; $i<$len ;$i++)
-           {
-                $module_array_path = $module_array_path."['$module[$i]]']";
-           }
-           $module_array_path = $module[0].$module_array_path;
-           if(isset(Root::getConfig()->$module_array_path))
-           {
-               $this->mIncludedTemplate = Root::getConfig()->$module_array_path;
-           }
-//           if(in_array($module, Root::getConfig()->main['modules']))
-//            {
-//                $this->mIncludedTemplate = Root::getConfig()->$module;
-//
-//            }
-            
-       }
-       $this->mIncludedTemplate[$plugins] = Root::getConfig()->$plugins;
-   }
+            }
+            $this->mIncludedTemplate['layouts'] = Root::getConfig()->{$filename}['layouts'];
+        } else if (sizeof($family) > 0) {
+            // Get all child page of family
+            $this->mIncludedTemplate = Root::getConfig()->$family[0];
+            foreach ($this->mIncludedTemplate as $module) {
+                if (!isset($module['layouts']) || sizeof($module['layouts']) === 0)
+                    break;
+                // Get the smallest child in $family
+                $this->mIncludedTemplate = $module;
+            }
+        }
+        $this->mIncludedTemplate[PLUGIN] = Root::getConfig()->{PLUGIN};
+    }
+
 }

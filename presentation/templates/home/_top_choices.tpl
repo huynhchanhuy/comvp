@@ -1,5 +1,5 @@
 {* top_choices *}
-{load_presentation_object filename=$smarty.template parentpage=$parent assign="obj"}
+{load_presentation_object filename=$smarty.template family=$family assign="obj"}
 
 <h2 class="title text-center">Món ăn bán chạy</h2>
 <div id="recommended-item-carousel" class="carousel slide" data-ride="carousel">

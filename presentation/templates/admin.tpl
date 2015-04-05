@@ -1,6 +1,6 @@
 {* admin *}
 {config_load file="site.conf"}
-{load_presentation_object filename=$smarty.template assign="obj"}
+{load_presentation_object filename=$smarty.template family=0 assign="obj"}
 <!DOCTYPE html>
 <html lang="en">
 
@@ -48,19 +48,19 @@
             <!-- Navigation -->
             <nav class="navbar navbar-default navbar-static-top" role="navigation" style="margin-bottom: 0">
                 <div class="navbar-header">
-                    <a class="navbar-brand" href="index.html">Khu Vực Quản Lý Website</a>
+                    <a class="navbar-brand" href="{$obj->mAdminUrl}">Khu Vực Quản Lý Website</a>
                 </div>
                 <div class="navbar-header" style="float:right">
-                    <a class="navbar-brand" href="index.html" style="color: #0088cc"><i class="fa fa-long-arrow-left fa-fw"></i> <i>Quay Về Trang Chủ</i></a>
+                    <a class="navbar-brand" href="{$obj->mSiteUrl}" style="color: #0088cc"><i class="fa fa-long-arrow-left fa-fw"></i> <i>Quay Về Trang Chủ</i></a>
                 </div>
                 <!-- /.navbar-header -->
 
-                {include file=$this.filename|cat:"/"|cat:"_left_sidebar.tpl"}
+                {include file=$obj->filename|cat:"/"|cat:"_left_sidebar.tpl"}
                 <!-- /.navbar-static-side -->
             </nav>
 
             <div id="page-wrapper">
-                {include file=$this.filename|cat:"/"|cat:"_content.tpl"}
+                {include file=$obj->filename|cat:"/"|cat:"_content.tpl"}
             </div>
             <!-- /#page-wrapper -->
 

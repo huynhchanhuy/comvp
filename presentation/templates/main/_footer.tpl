@@ -1,5 +1,5 @@
 {* footer *}
-{load_presentation_object filename=$smarty.template parentpage=$parent assign="obj"}
+{load_presentation_object filename=$smarty.template family=$family assign="obj"}
 {assign var=plugins value=$smarty.const.PLUGIN} 
 {*--> get from constant variables that were defined in config.php*}
 

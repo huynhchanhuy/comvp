@@ -12,11 +12,9 @@ class Main extends Base {
     public $mPageTitle;
     public $mContentsCell;
     
-    public function __construct($module,$filename) {
-        parent::__construct($module,$filename);
+    public function __construct($filename,$family) {
+        parent::__construct($filename,$family,1);
         $this->mSiteUrl = Link::Build('');
-        // Because main page doesnt have any plugin
-        // $this->mIncludedTemplate = $this->mConfig['main'];
         $modules = Root::getConfig()->main['modules'];
         
         #$this->$mPageTitle = 

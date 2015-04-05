@@ -1,7 +1,5 @@
-<?php /* Smarty version 2.6.28, created on 2015-03-22 19:37:53
+<?php /* Smarty version 2.6.28, created on 2015-04-05 16:20:59
          compiled from admin/_left_sidebar.tpl */ ?>
-
-
 <div class="navbar-default sidebar" role="navigation">
     <div class="sidebar-nav navbar-collapse">
         <ul class="nav" id="side-menu">

@@ -1,5 +1,5 @@
 {* contact *}
-{load_presentation_object filename=$smarty.template  assign="obj"}
+{load_presentation_object filename=$smarty.template module=$module  assign="obj"}
 
 <div id="contact-page" class="container">
     <div class="bg">

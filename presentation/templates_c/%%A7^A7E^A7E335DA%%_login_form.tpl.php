@@ -1,8 +1,8 @@
-<?php /* Smarty version 2.6.28, created on 2015-03-28 18:54:21
+<?php /* Smarty version 2.6.28, created on 2015-04-05 16:41:24
          compiled from login/_login_form.tpl */ ?>
 <?php require_once(SMARTY_CORE_DIR . 'core.load_plugins.php');
 smarty_core_load_plugins(array('plugins' => array(array('function', 'load_presentation_object', 'login/_login_form.tpl', 2, false),)), $this); ?>
-<?php echo smarty_function_load_presentation_object(array('filename' => 'login/_login_form.tpl','parentpage' => $this->_tpl_vars['parent'],'assign' => 'obj'), $this);?>
+<?php echo smarty_function_load_presentation_object(array('filename' => 'login/_login_form.tpl','family' => $this->_tpl_vars['family'],'assign' => 'obj'), $this);?>
 
 
 <div class="login-form"><!--login form-->

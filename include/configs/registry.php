@@ -55,7 +55,7 @@ return array(
     ),
     'admin' => array(
         'value' => 'admin',
-        'modules' => array('order','menudish','dish','info','anwser'), 
+        'modules' => array(),#array('order','menudish','dish','info','anwser'), 
         //order:check,unchecked - menu:manage,create,update,delete, dish:manage,create,update,delete info: aboutus,guide,fag - anwser:answered and unanswered
         'layouts' => array(
             'left_sidebar' => array(

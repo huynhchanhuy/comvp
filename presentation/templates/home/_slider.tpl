@@ -1,5 +1,5 @@
 {* slider *}
-{load_presentation_object filename=$smarty.template parentpage=$parent assign="obj"}
+{load_presentation_object filename=$smarty.template family=$family assign="obj"}
 <div class="container">
     <div class="row">
         <div class="col-sm-12">

@@ -12,8 +12,8 @@ class Header extends Base {
     public $mPage;
     public $mLogoUrl;
 
-    public function __construct($module,$filename) {
-        parent::__construct($module,$filename);
+    public function __construct($module,$family) {
+        parent::__construct($module,$family);
         
         $home_class='';
         $contact_class='';
@@ -22,7 +22,7 @@ class Header extends Base {
         $login_class='';
         
         $this->mLogoUrl = Link::Build('');
-        if($_SESSION['lv'] === '1')
+        if(isset($_SESSION['lv']) && $_SESSION['lv'] === '1')
             $this->mUserPage = Link::ToAdmin();
         else 
             $this->mUserPage = Link::ToUserProfile();

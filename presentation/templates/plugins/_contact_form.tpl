@@ -1,5 +1,5 @@
 {* contact_form *}
-{load_presentation_object filename=$smarty.template parentpage=$parent assign="obj"}
+{load_presentation_object filename=$smarty.template parentpage=$parent module=$module assign="obj"}
 
 <div class="contact-form">
         <h2 class="title text-center">Gửi Phản Hồi</h2>

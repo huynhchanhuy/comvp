@@ -7,16 +7,10 @@
  */
 
 /**
- * Description of store_front
+ * Description of plugin
  *
  * @author Huy
  */
-
-class Home extends Base {
-    
-    // Initialize presentation object
-    public function init()
-    {
-        
-    }
+class Plugin {
+    //put your code here
 }

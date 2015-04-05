@@ -1,6 +1,6 @@
 {* left_sidebar *}
 {config_load file="site.conf"}
-{load_presentation_object filename=$smarty.template parentpage=$parent assign="obj"}
+{load_presentation_object filename=$smarty.template family=$family assign="obj"}
 
 <div class="left-sidebar">
         <h2>Tuần này có gì ?</h2>

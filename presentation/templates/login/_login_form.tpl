@@ -1,5 +1,5 @@
 {* login_form *}
-{load_presentation_object filename=$smarty.template parentpage=$parent assign="obj"}
+{load_presentation_object filename=$smarty.template family=$family assign="obj"}
 
 <div class="login-form"><!--login form-->
     <h2>Đăng Nhập</h2>

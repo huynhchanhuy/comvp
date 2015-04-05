@@ -1,5 +1,5 @@
 {* header *}
-{load_presentation_object filename=$smarty.template parentpage=$parent assign="obj"}
+{load_presentation_object filename=$smarty.template family=$family assign="obj"}
 {*{include file="main/_header/_header_top.tpl" parent=$this}*}
 {*{include file='main/'|cat:$this.filename|cat:"/"|cat:$obj->mIncludedTemplate.layouts.header.layouts.TOP.name parent=$this}
 {include file='main/'|cat:$this.filename|cat:"/"|cat:$obj->mIncludedTemplate.layouts.header.layouts.MIDDLE.name parent=$this}

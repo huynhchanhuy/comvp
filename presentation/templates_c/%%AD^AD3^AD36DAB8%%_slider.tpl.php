@@ -1,8 +1,8 @@
-<?php /* Smarty version 2.6.28, created on 2015-02-20 21:25:17
+<?php /* Smarty version 2.6.28, created on 2015-04-05 16:04:16
          compiled from home/_slider.tpl */ ?>
 <?php require_once(SMARTY_CORE_DIR . 'core.load_plugins.php');
 smarty_core_load_plugins(array('plugins' => array(array('function', 'load_presentation_object', 'home/_slider.tpl', 2, false),)), $this); ?>
-<?php echo smarty_function_load_presentation_object(array('filename' => 'home/_slider.tpl','parentpage' => $this->_tpl_vars['parent'],'assign' => 'obj'), $this);?>
+<?php echo smarty_function_load_presentation_object(array('filename' => 'home/_slider.tpl','family' => $this->_tpl_vars['family'],'assign' => 'obj'), $this);?>
 
 <div class="container">
     <div class="row">

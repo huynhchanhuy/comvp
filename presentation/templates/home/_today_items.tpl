@@ -1,5 +1,5 @@
 {* today_items *}
-{load_presentation_object filename=$smarty.template parentpage=$parent assign="obj"}
+{load_presentation_object filename=$smarty.template family=$family assign="obj"}
 
 <h2 class="title text-center">Hôm nay có gì</h2>
 <div class="col-sm-4">

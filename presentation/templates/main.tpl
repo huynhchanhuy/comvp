@@ -1,6 +1,6 @@
 {* main *}
 {config_load file="site.conf"}
-{load_presentation_object filename=$smarty.template assign="obj"}
+{load_presentation_object filename=$smarty.template family=0 assign="obj"}
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -30,13 +30,13 @@
     <body>
         <header id="header"><!--header-->
             {* Because mainpage does not have any plugin *}
-            {include file=$this.filename|cat:"/"|cat:$obj->mIncludedTemplate.layouts.header.name parent=$this}
+            {include file=$obj->filename|cat:"/"|cat:$obj->mIncludedTemplate.layouts.header.name family=$family}
         </header><!--/header-->
 
-        {include file=$obj->mContentsCell}
+        {include file=$obj->mContentsCell family=0}
 
         <footer id="footer"><!--Footer-->
-            {include file=$this.filename|cat:"/"|cat:$obj->mIncludedTemplate.layouts.footer.name parent=$this}
+            {include file=$obj->filename|cat:"/"|cat:$obj->mIncludedTemplate.layouts.footer.name family=$family}
         </footer><!--/Footer-->
 
         <script src="{#frontpage_js_dir#}jquery.js"></script>
