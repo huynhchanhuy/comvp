@@ -35,20 +35,19 @@ class Root{
         return self::$_utils;
     }
     public static function init(){
-        require_once BUSINESS_DIR. 'error_handler.php';
+        require_once HANDLER_DIR. 'error_handler.php';
+        // Load the database handler
+        require_once HANDLER_DIR . 'database_handler.php';
         // Set the error handler
         ErrorHandler::SetHandler();
+        
+        require_once MASTER_DIR.'core.php';
+        require_once MASTER_DIR.'base.php';
+        
         // Load the application page template
-        require_once PRESENTATION_DIR.'core.php';
-        require_once PRESENTATION_DIR.'base.php';
         require_once PRESENTATION_DIR.'application.php';
         // Link Factory
         require_once PRESENTATION_DIR.'link.php'; 
-        // Load the database handler
-        require_once BUSINESS_DIR . 'database_handler.php';
-        // Load Business Tier
-        #require_once BUSINESS_DIR . 'catalog.php';
-        require_once BUSINESS_DIR . 'hasher.php';
-        require_once BUSINESS_DIR . 'auth.php';
+        
     }
 }

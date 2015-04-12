@@ -11,7 +11,7 @@
  *
  * @author Huy
  */
-class Contact 
+class Contact extends Base
 {
     // Initialize presentation object
     public function init()

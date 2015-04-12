@@ -7,7 +7,7 @@
     
     // Include utility files
     require_once './include/config.php';
-    require_once PRESENTATION_DIR.'root.php';
+    require_once MASTER_DIR.'root.php';
     Root::init();
     
     // Load Smarty template file

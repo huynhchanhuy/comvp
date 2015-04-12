@@ -1,13 +1,18 @@
-{* contact_form *}
-{load_presentation_object filename=$smarty.template isplugin=1 assign="obj"}
+<?php /* Smarty version 2.6.28, created on 2015-04-12 13:27:37
+         compiled from plugins/_contact_form.tpl */ ?>
+<?php require_once(SMARTY_CORE_DIR . 'core.load_plugins.php');
+smarty_core_load_plugins(array('plugins' => array(array('function', 'load_presentation_object', 'plugins/_contact_form.tpl', 2, false),)), $this); ?>
+<?php echo smarty_function_load_presentation_object(array('filename' => 'plugins/_contact_form.tpl','isplugin' => 1,'assign' => 'obj'), $this);?>
 
-{*js message*}
-{$obj->mMsg}
+
+<?php echo $this->_tpl_vars['obj']->mMsg; ?>
+
 
 <div id="contact-form" class="contact-form">
         <h2 class="title text-center">Gửi Phản Hồi</h2>
         <div class="status alert alert-success" style="display: none"></div>
-        <form id="main-contact-form" class="contact-form row" name="contact-form" method="post" onsubmit="sendForm(this)" action="{$obj->mLinkSendMail}">
+        <form id="main-contact-form" class="contact-form row" name="contact-form" method="post" onsubmit="sendForm(this)" action="<?php echo $this->_tpl_vars['obj']->mLinkSendMail; ?>
+">
             <div class="form-group col-md-12">
                 <input type="text" name="name" maxlength="70" class="form-control" required="required" placeholder="Họ Tên"
                        oninvalid="this.setCustomValidity('Họ tên không được để trống')">

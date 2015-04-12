@@ -66,7 +66,7 @@ class Link {
 
     // Create link to login page
     public static function ToLogin() {
-        return self::Build('index.php?nav=login&type=login');
+        return self::Build('index.php?nav=login');
     }
     
     // Create link to logout page
@@ -81,6 +81,13 @@ class Link {
             $link = 'index.php?nav=login&result=' . $errcode;
         }
         return self::Build($link);
+    }
+    
+    public static function ToContactForm($contactform=false){
+        if($contactform === false)
+            return self::Build('index.php?nav=contact');
+        else
+            return self::Build('index.php?nav=contact#contact-form');
     }
 
     // Redirects to proper URL if not already there

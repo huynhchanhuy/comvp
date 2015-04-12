@@ -1,10 +1,25 @@
-<?php /* Smarty version 2.6.28, created on 2015-04-05 16:20:59
+<?php /* Smarty version 2.6.28, created on 2015-04-05 22:54:10
          compiled from admin/_left_sidebar.tpl */ ?>
 <div class="navbar-default sidebar" role="navigation">
     <div class="sidebar-nav navbar-collapse">
         <ul class="nav" id="side-menu">
             <li>
                 <a href="index.html"><i class="fa fa-dashboard fa-fw"></i> Quản Lý Chung</a>
+            </li>
+            <li>
+                <a href="#"><i class="fa fa-edit fa-fw"></i> Quản Lý Bài Viết<span class="fa arrow"></span></a>
+                <ul class="nav nav-second-level">
+                    <li>
+                        <a href="index.html"><i class="fa fa-file-text fa-fw"></i> Viết Bài Giới Thiệu</a>
+                    </li>
+                    <li>
+                        <a href="index.html"><i class="fa fa-info fa-fw"></i> Viết Bài Hướng Dẫn</a>
+                    </li>
+                    <li>
+                        <a href="index.html"><i class="fa fa-question fa-fw"></i> Câu Hỏi Thường Gặp</a>
+                    </li>
+                </ul>
+                <!-- /.nav-second-level -->
             </li>
             <li>
                 <a href="#"><i class="fa fa-th-list fa-fw"></i> Đặt Món<span class="fa arrow"></span></a>
@@ -63,18 +78,6 @@
                             </li>
                         </ul>
                         <!-- /.nav-third-level -->
-                    </li>
-                </ul>
-                <!-- /.nav-second-level -->
-            </li>
-            <li>
-                <a href="#"><i class="fa fa-file-text-o fa-fw"></i> Thông Tin<span class="fa arrow"></span></a>
-                <ul class="nav nav-second-level">
-                    <li>
-                        <a href="panels-wells.html">Giới Thiệu</a>
-                    </li>
-                    <li>
-                        <a href="panels-wells.html">Hướng Dẫn</a>
                     </li>
                 </ul>
                 <!-- /.nav-second-level -->

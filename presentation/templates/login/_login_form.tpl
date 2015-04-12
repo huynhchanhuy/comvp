@@ -11,7 +11,7 @@
                 <input type="checkbox" name="rmbme" value="rmbme" class="checkbox"> 
                 Nhớ trạng thái đăng nhập
             </span>
-            <button type="submit" class="btn btn-default">Đăng nhập</button>
+            <button type="submit" name="btnlogin" class="btn btn-default">Đăng nhập</button>
 
             <span class="help-block">{$obj->mErrMsg}</span>
         </div>

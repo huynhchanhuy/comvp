@@ -3,21 +3,21 @@
 {assign var=plugins value=$smarty.const.PLUGIN} 
 {*--> get from constant variables that were defined in config.php*}
 
-<div class="footer-top">
+{*<div class="footer-top">
         <div class="container">
                 <div class="row">
                         <div class="col-sm-5">
-                                {include file=$plugins|cat:"/"|cat:$obj->mIncludedTemplate.$plugins.layouts.gmap parent=$plugins}
+                                {include file=$plugins|cat:"/"|cat:$obj->mIncludedTemplate.$plugins.layouts.gmap}
                         </div>
                         <div class="col-sm-4">
-                                {include file=$plugins|cat:"/"|cat:$obj->mIncludedTemplate.$plugins.layouts.contact_info parent=$plugins}
+                                {include file=$plugins|cat:"/"|cat:$obj->mIncludedTemplate.$plugins.layouts.contact_info}
                         </div>
                         <div class="col-sm-3">
-                                {include file=$plugins|cat:"/"|cat:$obj->mIncludedTemplate.$plugins.layouts.subscribed_form parent=$plugins}
+                                {include file=$plugins|cat:"/"|cat:$obj->mIncludedTemplate.$plugins.layouts.subscribed_form}
                         </div>
                 </div>
         </div>
-</div>
+</div>*}
 
 <div class="footer-bottom">
         <div class="container">

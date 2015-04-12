@@ -1,27 +1,10 @@
 <?php
 # This file stored the registry for each module.
 # Use only for module creation and configuration
-
-//# TPL belongs to 'home'
-//define('HOME_SLIDER', '_slider');
-//define('HOME_LEFT_SIDEBAR', '_left_sidebar');
-//define('HOME_TODAY_ITEMS', '_today_items');
-//define('HOME_CATEGORY_TAB', '_category_tab');
-//define('HOME_TOP_CHOICES', '_top_choices');
-//
-//# TPL belongs to 'main'
-//define('MAIN_HEADER', '_header');
-//define('MAIN_FOOTER', '_footer');
-//
-//# TPL belongs to plugin
-//define('PLUGIN_COMPANY_INFO', '_company_info');
-//define('PLUGIN_GMAP', '_gmap');
-//define('PLUGIN_CONTACT_FORM', '_contact_form');
-//define('PLUGIN_CONTACT_INFO', '_contact_info');
-//define('PLUGIN_LOGIN_FORM', '_login_form');
-//define('PLUGIN_SIGNUP_FORM_INFO', '_signup_form');
 # Define template that contains template files's definition
 return array(
+    'businessClasses' => array('auth','hasher','contactus'),
+    
     // Main module
     'main' => array(
         'value' => 'main',
@@ -100,8 +83,22 @@ return array(
     'aboutus' => array( # Term and service
         'value' => 1,
         'captions' => 'Chính Sách',
-        'submenu' => array(
-            
+        'layouts' => array(
+            'ABOUTUS_INTRO' =>  array(
+                'name' => '_intro.tpl',
+                'layouts' => array(),
+                //'path' => '', # specific path for including filename if you dont want to place it as default structure
+            ),
+            'ABOUTUS_HELP' =>  array(
+                'name' => '_help.tpl',
+                'layouts' => array(),
+                //'path' => '', # specific path for including filename if you dont want to place it as default structure
+            ),
+            'ABOUTUS_FAQ' =>  array(
+                'name' => '_faq.tpl',
+                'layouts' => array(),
+                //'path' => '', # specific path for including filename if you dont want to place it as default structure
+            ),
         ),
     ),
     'contact' => array(

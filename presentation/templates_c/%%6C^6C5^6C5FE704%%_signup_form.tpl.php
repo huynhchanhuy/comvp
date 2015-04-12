@@ -1,4 +1,4 @@
-<?php /* Smarty version 2.6.28, created on 2015-04-05 16:41:25
+<?php /* Smarty version 2.6.28, created on 2015-04-11 23:17:43
          compiled from login/_signup_form.tpl */ ?>
 <?php require_once(SMARTY_CORE_DIR . 'core.load_plugins.php');
 smarty_core_load_plugins(array('plugins' => array(array('function', 'load_presentation_object', 'login/_signup_form.tpl', 2, false),)), $this); ?>
@@ -11,6 +11,6 @@ smarty_core_load_plugins(array('plugins' => array(array('function', 'load_presen
                 <input type="text" placeholder="Name"/>
                 <input type="email" placeholder="Email Address"/>
                 <input type="password" placeholder="Password"/>
-                <button type="submit" class="btn btn-default">Đăng ký</button>
+                <button type="submit" name="btnreg" class="btn btn-default">Đăng ký</button>
         </form>
 </div><!--/sign up form-->

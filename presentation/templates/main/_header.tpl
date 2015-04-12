@@ -1,11 +1,5 @@
 {* header *}
 {load_presentation_object filename=$smarty.template family=$family assign="obj"}
-{*{include file="main/_header/_header_top.tpl" parent=$this}*}
-{*{include file='main/'|cat:$this.filename|cat:"/"|cat:$obj->mIncludedTemplate.layouts.header.layouts.TOP.name parent=$this}
-{include file='main/'|cat:$this.filename|cat:"/"|cat:$obj->mIncludedTemplate.layouts.header.layouts.MIDDLE.name parent=$this}
-{if isset($obj->mNavigation)}
-    {include file='main/'|cat:$this.filename|cat:"/"|cat:$obj->mIncludedTemplate.layouts.header.layouts.BOTTOM.name parent=$this}
-{/if}*}
 <div class="header_top"><!--header_top-->
     <div class="container">
         <div class="row">
@@ -79,9 +73,9 @@
                         <li><a href="{$obj->mNavigation.home.url}" class="{$obj->mNavigation.home.attr}">Trang Chủ</a></li>
                         <li><a href="{$obj->mNavigation.aboutus.url}" class="{$obj->mNavigation.aboutus.attr}">Chính Sách <i class="fa fa-angle-down"></i></a>
                             <ul role="menu" class="sub-menu">
-                                <li><a href="presentation\templates\shop.html">Giới Thiệu Chung</a></li>
-                                <li><a href="presentation\templates\product-details.html">Hướng Dẫn</a></li> 
-                                <li><a href="presentation\templates\checkout.html">Hỏi đáp</a></li>
+                                <li><a href="{$obj->mNavigation.aboutus.url}#intro">Giới Thiệu Chung</a></li>
+                                <li><a href="{$obj->mNavigation.aboutus.url}#help">Hướng Dẫn</a></li> 
+                                <li><a href="{$obj->mNavigation.aboutus.url}#faq">Hỏi đáp</a></li>
                             </ul>
                         </li>
 

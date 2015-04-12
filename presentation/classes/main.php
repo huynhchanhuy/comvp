@@ -13,6 +13,7 @@ class Main extends Base {
     public $mContentsCell;
     
     public function __construct($filename,$family) {
+        // main
         parent::__construct($filename,$family,1);
         $this->mSiteUrl = Link::Build('');
         $modules = Root::getConfig()->main['modules'];
@@ -31,6 +32,7 @@ class Main extends Base {
     
     // Class constructor
     public function init() {
+        // when logout
         if (isset($_GET['logout']))
         {
             Authentication::Logout ();

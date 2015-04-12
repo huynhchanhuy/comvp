@@ -7,6 +7,8 @@ define('SITE_ROOT',dirname(dirname(__FILE__)));
 
 // Application directories
 define('PRESENTATION_DIR',SITE_ROOT.'/presentation/');
+define('HANDLER_DIR',SITE_ROOT.'/handler/');
+define('MASTER_DIR',SITE_ROOT.'/master/');
 define('BUSINESS_DIR',SITE_ROOT.'/business/');
 
 // Settings needed to configure the Smarty tempalte engine

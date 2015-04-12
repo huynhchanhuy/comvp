@@ -24,7 +24,7 @@ function smarty_function_load_presentation_object($params, $smarty) {
     $filename = basename($params['filename'], TPL);
     $isPlugin = FALSE;
     $family = array();
-    if(isset($params['isPlugin']) && $params['isPlugin'] === 1){
+    if(isset($params['isplugin']) && $params['isplugin'] === 1){
         $family[0] = PLUGIN;
         array_push($family, $filename);
         $isPlugin = TRUE;
@@ -44,11 +44,18 @@ function smarty_function_load_presentation_object($params, $smarty) {
 
     // Looking for the class in *.php file
     $className = str_replace(' ', '', ucfirst(str_replace('_', ' ', $filename)));
-
-    // Create presentation object
-    // module element is the neareast father of current page
-    $obj = new $className($filename,$family);
-
+    
+    if($isPlugin === FALSE)
+    {
+        // Create presentation object
+        // module element is the neareast father of current page
+        $obj = new $className($filename,$family);
+    }
+    else
+    {
+        $obj = new $className();
+    }
+    
     // Looking for the function init
     if (method_exists($obj, 'init')) {
         $obj->init();

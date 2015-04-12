@@ -1,4 +1,4 @@
-<?php /* Smarty version 2.6.28, created on 2015-04-05 16:01:54
+<?php /* Smarty version 2.6.28, created on 2015-04-05 22:30:25
          compiled from main/_header.tpl */ ?>
 <?php require_once(SMARTY_CORE_DIR . 'core.load_plugins.php');
 smarty_core_load_plugins(array('plugins' => array(array('function', 'load_presentation_object', 'main/_header.tpl', 2, false),)), $this); ?>
@@ -88,9 +88,12 @@ smarty_core_load_plugins(array('plugins' => array(array('function', 'load_presen
 " class="<?php echo $this->_tpl_vars['obj']->mNavigation['aboutus']['attr']; ?>
 ">Chính Sách <i class="fa fa-angle-down"></i></a>
                             <ul role="menu" class="sub-menu">
-                                <li><a href="presentation\templates\shop.html">Giới Thiệu Chung</a></li>
-                                <li><a href="presentation\templates\product-details.html">Hướng Dẫn</a></li> 
-                                <li><a href="presentation\templates\checkout.html">Hỏi đáp</a></li>
+                                <li><a href="<?php echo $this->_tpl_vars['obj']->mNavigation['aboutus']['url']; ?>
+#intro">Giới Thiệu Chung</a></li>
+                                <li><a href="<?php echo $this->_tpl_vars['obj']->mNavigation['aboutus']['url']; ?>
+#help">Hướng Dẫn</a></li> 
+                                <li><a href="<?php echo $this->_tpl_vars['obj']->mNavigation['aboutus']['url']; ?>
+#faq">Hỏi đáp</a></li>
                             </ul>
                         </li>
 

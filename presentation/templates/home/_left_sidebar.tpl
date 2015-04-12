@@ -1,7 +1,7 @@
 {* left_sidebar *}
 {config_load file="site.conf"}
 {load_presentation_object filename=$smarty.template family=$family assign="obj"}
-
+{assign var=plugins value=$smarty.const.PLUGIN} 
 <div class="left-sidebar">
         <h2>Tuần này có gì ?</h2>
         <div class="panel-group category-products" id="accordian"><!--category-productsr-->
@@ -108,7 +108,10 @@
                          <b class="pull-left">$ 0</b> <b class="pull-right">$ 600</b>
                 </div>
         </div><!--/price-range-->*}
-
+        <div id="subscribed" class="contact-form brands_products">
+            {include file=$plugins|cat:"/"|cat:$obj->mIncludedTemplate.$plugins.layouts.subscribed_form}
+        </div>
+        
         <div class="support"><!--price-range-->
                 <h2>Hỗ trợ trực tuyến</h2>
                 <div class="well text-center">

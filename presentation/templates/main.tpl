@@ -45,7 +45,6 @@
         <script src="{#frontpage_js_dir#}price-range.js"></script>
         <script src="{#frontpage_js_dir#}jquery.prettyPhoto.js"></script>
         <script src="{#frontpage_js_dir#}private.js"></script>
-        <script src="{#frontpage_js_dir#}vbdmap.js"></script>
         <script src="{#frontpage_js_dir#}main.js"></script>
     </body>
 </html>

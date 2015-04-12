@@ -5,6 +5,21 @@
                 <a href="index.html"><i class="fa fa-dashboard fa-fw"></i> Quản Lý Chung</a>
             </li>
             <li>
+                <a href="#"><i class="fa fa-edit fa-fw"></i> Quản Lý Bài Viết<span class="fa arrow"></span></a>
+                <ul class="nav nav-second-level">
+                    <li>
+                        <a href="index.html"><i class="fa fa-file-text fa-fw"></i> Viết Bài Giới Thiệu</a>
+                    </li>
+                    <li>
+                        <a href="index.html"><i class="fa fa-info fa-fw"></i> Viết Bài Hướng Dẫn</a>
+                    </li>
+                    <li>
+                        <a href="index.html"><i class="fa fa-question fa-fw"></i> Câu Hỏi Thường Gặp</a>
+                    </li>
+                </ul>
+                <!-- /.nav-second-level -->
+            </li>
+            <li>
                 <a href="#"><i class="fa fa-th-list fa-fw"></i> Đặt Món<span class="fa arrow"></span></a>
                 <ul class="nav nav-second-level">
                     <li>
@@ -61,18 +76,6 @@
                             </li>
                         </ul>
                         <!-- /.nav-third-level -->
-                    </li>
-                </ul>
-                <!-- /.nav-second-level -->
-            </li>
-            <li>
-                <a href="#"><i class="fa fa-file-text-o fa-fw"></i> Thông Tin<span class="fa arrow"></span></a>
-                <ul class="nav nav-second-level">
-                    <li>
-                        <a href="panels-wells.html">Giới Thiệu</a>
-                    </li>
-                    <li>
-                        <a href="panels-wells.html">Hướng Dẫn</a>
                     </li>
                 </ul>
                 <!-- /.nav-second-level -->

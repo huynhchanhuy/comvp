@@ -1,6 +1,8 @@
 $(document).ready(function(){	
     
-    VBDMap.init();
+    if (typeof VBDMap != 'undefined') {
+        VBDMap.init();
+    }
     $("#today").html($("#today").html()+getDateTime());
     /*scroll to top*/
     $(function () {

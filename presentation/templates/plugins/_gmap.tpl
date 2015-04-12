@@ -1,5 +1,5 @@
 {* gmap *}
-{load_presentation_object filename=$smarty.template parentpage=$parent assign="obj"}
+{load_presentation_object filename=$smarty.template isplugin=1 assign="obj"}
   			    				    				
 
 <div class="map-container">
