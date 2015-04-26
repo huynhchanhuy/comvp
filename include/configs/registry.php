@@ -7,7 +7,8 @@ return array(
     
     // Main module
     'main' => array(
-        'value' => 'main',
+        'captions' => null,
+        'values' => 'main',
         // Primary module
         'modules' => array('home','aboutus','contact','menu','login'),//because they are declare in this, so no need for <name>.tpl
         'layouts' => array(
@@ -37,19 +38,21 @@ return array(
         ),
     ),
     'admin' => array(
-        'value' => 'admin',
-        'modules' => array(),#array('order','menudish','dish','info','anwser'), 
+        'captions' => 'Administrator',
+        'values' => 'admin',
+        'modules' => array('dashboard','article'),#array('order','menudish','dish','info','anwser'), 
         //order:check,unchecked - menu:manage,create,update,delete, dish:manage,create,update,delete info: aboutus,guide,fag - anwser:answered and unanswered
         'layouts' => array(
-            'left_sidebar' => array(
+            'leftsidebar' => array(
                 'name' => '_left_sidebar.tpl',
                 'layouts' => array()
-            ) 
+            ),
         )
     ),
     // Primary module, must be place in default structure
+    // main
     'home' => array(
-        'value' => 0,
+        'values' => 0,
         // <name>.tpl --> needless
         'captions' => 'Trang Chủ',
         'layouts' => array(
@@ -81,7 +84,7 @@ return array(
         )
     ),
     'aboutus' => array( # Term and service
-        'value' => 1,
+        'values' => 1,
         'captions' => 'Chính Sách',
         'layouts' => array(
             'ABOUTUS_INTRO' =>  array(
@@ -102,20 +105,33 @@ return array(
         ),
     ),
     'contact' => array(
-        'value' => 2,
+        'values' => 2,
         'captions' => 'Liên Hệ',
     ),
     'menu' => array(
-        'value' => 3,
+        'values' => 3,
         'captions' => 'Thực Đơn',
     ),
    'login' => array(
         'captions' => 'Đăng Nhập',
-        'layout'=>array()
+        'layouts'=>array()
    ),
+    //admin
+    'dashboard' => array(
+        'captions' => 'Quản Lý Chung',
+    ),
+    'article' => array(
+        // value is the self-defined field
+        'values' => array('intro','guide','faq'),
+        'captions' => array(
+            'intro' => 'Viết Bài Giới Thiệu',
+            'guide' => 'Viết Bài Hướng Dẫn',
+            'fag' => 'Câu Hỏi Thường Gặp',
+        )
+    ),
     // Plugin module
     PLUGIN => array(
-        'value' => NULL,
+        'values' => NULL,
         'caption' => NULL ,
         'layouts' => array(
             'subscribed_form' => '_subscribed_form.tpl',

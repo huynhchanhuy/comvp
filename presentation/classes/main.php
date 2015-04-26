@@ -16,13 +16,12 @@ class Main extends Base {
         // main
         parent::__construct($filename,$family,1);
         $this->mSiteUrl = Link::Build('');
-        $modules = Root::getConfig()->main['modules'];
+        if(is_array($this->mPageTitle))
+            $this->mPageTitle = $this->mPageTitle[0];
         
-        #$this->$mPageTitle = 
-        $this->mContentsCell = $modules[0].TPL;
+        $this->mContentsCell = $this->main_modules[0].TPL;
         // check query string
-        if (isset($_GET['nav']) && in_array($_GET['nav'], $modules)) {
-           $this->mPageTitle = Root::getConfig()->{$_GET['nav']}['captions'];
+        if (isset($_GET['nav']) && in_array($_GET['nav'], $this->main_modules)) {
            $this->mContentsCell = $_GET['nav'].TPL;
         }
         else {

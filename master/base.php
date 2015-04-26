@@ -15,14 +15,20 @@ class Base {
 
     public $filename;
     public $mIncludedTemplate;
+    public $mPageTitle;
+    public $values;
+    public $main_modules;
 
     public function __construct($filename, $family, $ancestor = 0) {
         $this->filename = $filename;
         // Check if ancestor is this current page
         if ($ancestor === 1) {
             // Get this ancestor module
-            $main_modules = Root::getConfig()->{$filename}['modules'];
-            foreach ($main_modules as $mod_item) {
+            // Get page title
+            $this->mPageTitle = Root::getConfig()->{$filename}['captions'];
+            $this->main_modules = Root::getConfig()->{$filename}['modules'];
+            $this->values = Root::getConfig()->{$filename}['values'];
+            foreach ($this->main_modules as $mod_item) {
                 $this->mIncludedTemplate[$mod_item] = Root::getConfig()->$mod_item;
             }
             $this->mIncludedTemplate['layouts'] = Root::getConfig()->{$filename}['layouts'];
@@ -34,6 +40,10 @@ class Base {
                     break;
                 // Get the smallest child in $family
                 $this->mIncludedTemplate = $module;
+                if(isset($module['captions']))
+                    $this->mPageTitle = $module['captions'];
+                if(isset($module['values']))
+                    $this->values = $module['values'];
             }
         }
         $this->mIncludedTemplate[PLUGIN] = Root::getConfig()->{PLUGIN};

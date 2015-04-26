@@ -55,12 +55,12 @@
                 </div>
                 <!-- /.navbar-header -->
 
-                {include file=$obj->filename|cat:"/"|cat:"_left_sidebar.tpl"}
+                {include file=$obj->filename|cat:"/"|cat:$obj->mIncludedTemplate.layouts.leftsidebar.name family=$family}
                 <!-- /.navbar-static-side -->
             </nav>
 
             <div id="page-wrapper">
-                {include file=$obj->filename|cat:"/"|cat:"_content.tpl"}
+                {include file=$obj->mContentsCell family=$family}
             </div>
             <!-- /#page-wrapper -->
 
@@ -78,11 +78,10 @@
 
         <!-- Morris Charts JavaScript -->
         <script src="{#adminpage_style_dir#}bower_components/raphael/raphael-min.js"></script>
-        <script src="{#adminpage_style_dir#}bower_components/morrisjs/morris.min.js"></script>
-        <script src="{#adminpage_style_dir#}js/morris-data.js"></script>
 
         <!-- Custom Theme JavaScript -->
         <script src="{#adminpage_style_dir#}dist/js/sb-admin-2.js"></script>
+        <script src="{#adminpage_style_dir#}/js/main.js"></script>
 
     </body>
 
