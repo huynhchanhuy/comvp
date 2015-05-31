@@ -81,6 +81,11 @@ define('NAV_CONTACT_VALUE', 'Liên Hệ');
 define('NAV_MENU_VALUE', 'Món Ăn');
 define('NAV_ABOUTUS_VALUE', 'Giới Thiệu');
 
+# Menu Level Css
+define('MENU_CSS','MENU_CSS_LV');
+define(MENU_CSS.'0','nav nav-second-level');
+define(MENU_CSS.'1','nav nav-third-level');
+
 #Error Type
 define('LOGIN_MSG',1);
 

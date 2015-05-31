@@ -1,8 +1,10 @@
-<?php /* Smarty version 2.6.28, created on 2015-05-24 18:45:00
+<?php /* Smarty version 2.6.28, created on 2015-05-31 17:54:39
          compiled from admin.tpl */ ?>
 <?php require_once(SMARTY_CORE_DIR . 'core.load_plugins.php');
-smarty_core_load_plugins(array('plugins' => array(array('function', 'config_load', 'admin.tpl', 2, false),array('function', 'load_presentation_object', 'admin.tpl', 3, false),array('modifier', 'cat', 'admin.tpl', 58, false),)), $this); ?>
+smarty_core_load_plugins(array('plugins' => array(array('function', 'config_load', 'admin.tpl', 2, false),array('function', 'load_presentation_object', 'admin.tpl', 4, false),)), $this); ?>
 <?php echo smarty_function_config_load(array('file' => "site.conf"), $this);?>
+
+<?php echo smarty_function_config_load(array('file' => "htmlcode.conf"), $this);?>
 
 <?php echo smarty_function_load_presentation_object(array('filename' => 'admin.tpl','family' => 0,'assign' => 'obj'), $this);?>
 
@@ -69,9 +71,9 @@ bower_components/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="t
 " style="color: #0088cc"><i class="fa fa-long-arrow-left fa-fw"></i> <i>Quay Về Trang Chủ</i></a>
                 </div>
                 <!-- /.navbar-header -->
-
+                
                 <?php $_smarty_tpl_vars = $this->_tpl_vars;
-$this->_smarty_include(array('smarty_include_tpl_file' => ((is_array($_tmp=((is_array($_tmp=$this->_tpl_vars['obj']->filename)) ? $this->_run_mod_handler('cat', true, $_tmp, "/") : smarty_modifier_cat($_tmp, "/")))) ? $this->_run_mod_handler('cat', true, $_tmp, $this->_tpl_vars['obj']->mIncludedTemplate['layouts']['leftsidebar']['name']) : smarty_modifier_cat($_tmp, $this->_tpl_vars['obj']->mIncludedTemplate['layouts']['leftsidebar']['name'])), 'smarty_include_vars' => array('family' => $this->_tpl_vars['family'],'navigation' => $this->_tpl_vars['obj']->mNavigation)));
+$this->_smarty_include(array('smarty_include_tpl_file' => ($this->_tpl_vars['obj']->filename)."/".($this->_tpl_vars['obj']->mIncludedTemplate['layouts']['leftsidebar']['name']), 'smarty_include_vars' => array('site_dir' => $this->_tpl_vars['obj']->filename,'family' => $this->_tpl_vars['family'],'included_template' => $this->_tpl_vars['obj']->mIncludedTemplate)));
 $this->_tpl_vars = $_smarty_tpl_vars;
 unset($_smarty_tpl_vars);
  ?>

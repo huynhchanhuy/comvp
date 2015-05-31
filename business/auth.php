@@ -45,13 +45,13 @@ class Authentication {
                 self::RemoveAuthInfo($authInfo['id']);
             }
         }
-        
+        // set expired at current time
+        setcookie('auth', '', time(), '/');
     }
 
     public static function AutoLogin() {
         // Get authentication code
         $statuscode = self::IsAuthenticated();
-        
         // Have stored session
         if ($statuscode === 1)
             return true;

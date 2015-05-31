@@ -100,14 +100,6 @@
                         </ul>
                 </div>
         </div><!--/brands_products-->
-
-        {*<div class="price-range"><!--price-range-->
-                <h2>Price Range</h2>
-                <div class="well text-center">
-                         <input type="text" class="span2" value="" data-slider-min="0" data-slider-max="600" data-slider-step="5" data-slider-value="[250,450]" id="sl2" ><br />
-                         <b class="pull-left">$ 0</b> <b class="pull-right">$ 600</b>
-                </div>
-        </div><!--/price-range-->*}
         <div id="subscribed" class="contact-form brands_products">
             {include file=$plugins|cat:"/"|cat:$obj->mIncludedTemplate.$plugins.layouts.subscribed_form}
         </div>
@@ -115,7 +107,7 @@
         <div class="support"><!--price-range-->
                 <h2>Hỗ trợ trực tuyến</h2>
                 <div class="well text-center">
-                         <a href="ymsgr:sendim?Nick_Của_Bạn" mce_href="ymsgr:sendim?{#yahoo_us#}" border="0"><img src="http://opi.yahoo.com/online?u={#yahoo_us#}&t=14" mce_src="http://opi.yahoo.com/online?u={#yahoo_us#}&t=14"></a>                         
+                         <a href="#"{*"ymsgr:sendim?Nick_Của_Bạn"*} mce_href="ymsgr:sendim?{#yahoo_us#}" border="0"><img src="http://opi.yahoo.com/online?u={#yahoo_us#}&t=14" mce_src="http://opi.yahoo.com/online?u={#yahoo_us#}&t=14"></a>                         
                          <div>{#yahoo_supporter#}</div>
                 </div>
         </div><!--/support-range-->

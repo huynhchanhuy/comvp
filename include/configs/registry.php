@@ -1,16 +1,16 @@
 <?php
+
 # This file stored the registry for each module.
 # Use only for module creation and configuration
 # Define template that contains template files's definition
 return array(
-    'businessClasses' => array('auth','hasher','contactus'),
-    
+    'businessClasses' => array('auth', 'hasher', 'contactus'),
     // Main module
     'main' => array(
         'captions' => null,
         'values' => 'main',
         // Primary module
-        'modules' => array('home','aboutus','contact','menu','login'),//because they are declare in this, so no need for <name>.tpl
+        'modules' => array('home', 'aboutus', 'contact', 'menu', 'login'), //because they are declare in this, so no need for <name>.tpl
         'layouts' => array(
             'header' => array(
                 'name' => '_header.tpl',
@@ -28,19 +28,19 @@ return array(
 //                        //'path' => '', # specific path for including filename if you dont want to place it as default structure
 //                        ),
                 ),
-                //'path' => '', # specific path for including filename if you dont want to place it as default structure
-                ),
+            //'path' => '', # specific path for including filename if you dont want to place it as default structure
+            ),
             'footer' => array(
                 'name' => '_footer.tpl',
                 'layouts' => array(),
-                //'path' => '', # specific path for including filename if you dont want to place it as default structure
-                ),
+            //'path' => '', # specific path for including filename if you dont want to place it as default structure
+            ),
         ),
     ),
     'admin' => array(
         'captions' => 'Administrator',
         'values' => 'admin',
-        'modules' => array('dashboard','article','dishcategory'),#array('order','menudish','dish','info','anwser'), 
+        'modules' => array('dashboard', 'article', 'order', 'dishcategory', 'question'), #array('order','menudish','dish','info','anwser'), 
         //order:check,unchecked - menu:manage,create,update,delete, dish:manage,create,update,delete info: aboutus,guide,fag - anwser:answered and unanswered
         'layouts' => array(
             'leftsidebar' => array(
@@ -59,48 +59,48 @@ return array(
             'HOME_SLIDER' => array(
                 'name' => '_slider.tpl',
                 'layouts' => array(),
-                //'path' => '', # specific path for including filename if you dont want to place it as default structure
-                ),
+            //'path' => '', # specific path for including filename if you dont want to place it as default structure
+            ),
             'HOME_LEFT_SIDEBAR' => array(
                 'name' => '_left_sidebar.tpl',
                 'layouts' => array(),
-                //'path' => '', # specific path for including filename if you dont want to place it as default structure
-                ),
+            //'path' => '', # specific path for including filename if you dont want to place it as default structure
+            ),
             'HOME_TODAY_ITEMS' => array(
                 'name' => '_today_items.tpl',
                 'layouts' => array(),
-                //'path' => '', # specific path for including filename if you dont want to place it as default structure
-                ),
+            //'path' => '', # specific path for including filename if you dont want to place it as default structure
+            ),
             'HOME_CATEGORY_TAB' => array(
                 'name' => '_category_tab.tpl',
                 'layouts' => array(),
-                //'path' => '', # specific path for including filename if you dont want to place it as default structure
-                ),
+            //'path' => '', # specific path for including filename if you dont want to place it as default structure
+            ),
             'HOME_TOP_CHOICES' => array(
                 'name' => '_top_choices.tpl',
                 'layouts' => array(),
-                //'path' => '', # specific path for including filename if you dont want to place it as default structure
-                ),
+            //'path' => '', # specific path for including filename if you dont want to place it as default structure
+            ),
         )
     ),
-    'aboutus' => array( # Term and service
+    'aboutus' => array(# Term and service
         'values' => 1,
         'captions' => 'Chính Sách',
         'layouts' => array(
-            'ABOUTUS_INTRO' =>  array(
+            'ABOUTUS_INTRO' => array(
                 'name' => '_intro.tpl',
                 'layouts' => array(),
-                //'path' => '', # specific path for including filename if you dont want to place it as default structure
+            //'path' => '', # specific path for including filename if you dont want to place it as default structure
             ),
-            'ABOUTUS_HELP' =>  array(
+            'ABOUTUS_HELP' => array(
                 'name' => '_help.tpl',
                 'layouts' => array(),
-                //'path' => '', # specific path for including filename if you dont want to place it as default structure
+            //'path' => '', # specific path for including filename if you dont want to place it as default structure
             ),
-            'ABOUTUS_FAQ' =>  array(
+            'ABOUTUS_FAQ' => array(
                 'name' => '_faq.tpl',
                 'layouts' => array(),
-                //'path' => '', # specific path for including filename if you dont want to place it as default structure
+            //'path' => '', # specific path for including filename if you dont want to place it as default structure
             ),
         ),
     ),
@@ -112,50 +112,92 @@ return array(
         'values' => 3,
         'captions' => 'Thực Đơn',
     ),
-   'login' => array(
+    'login' => array(
         'captions' => 'Đăng Nhập',
-        'layouts'=>array()
-   ),
+        'layouts' => array()
+    ),
     //admin
     'dashboard' => array(
         'captions' => 'Quản Lý Chung',
+        // Static or default attributes
+        'cssclass' => 'fa fa-dashboard fa-fw',
     ),
     'article' => array(
         // value is the self-defined field
-        'values' => array('intro' => array('caption'=>'Viết Bài Giới Thiệu',),
-                            'guide'=> array('caption'=>'Viết Bài Hướng Dẫn',),
-                                'faq'=> array('caption'=>'Câu Hỏi Thường Gặp',),
+        'values' => array(
+            'intro' => array(
+                'captions' => 'Viết Bài Giới Thiệu',
+                'cssclass' => 'fa fa-file-text fa-fw',
             ),
-        'caption' => 'Quản Lý Nội Dung',
+            'guide' => array(
+                'captions' => 'Viết Bài Hướng Dẫn',
+                'cssclass' => 'fa fa-info fa-fw',
+            ),
+            'faq' => array(
+                'captions' => 'Câu Hỏi Thường Gặp',
+                'cssclass' => 'fa fa-question fa-fw',
+            ),
+        ),
+        'captions' => 'Quản Lý Nội Dung',
+        'cssclass' => 'fa fa-edit fa-fw',
     ),
-    'article' => array(
+    'order' => array(
         // value is the self-defined field
-        'values' => array('intro' => array('caption'=>'Viết Bài Giới Thiệu',),
-                            'guide'=> array('caption'=>'Viết Bài Hướng Dẫn',),
-                                'faq'=> array('caption'=>'Câu Hỏi Thường Gặp',),
+        'captions' => 'Thực Đơn',
+        'cssclass' => 'fa fa-book fa-fw',
+        'values' => array(
+            'category' => array(
+                'captions' => 'Quản Lý Thực Đơn',
+                'cssclass' => 'fa fa-cogs fa-fw',
             ),
-        'caption' => 'Quản Lý Nội Dung',
+            'dish' => array(
+                'captions' => 'Thêm Mới Thực Đơn',
+                'cssclass' => 'fa fa-plus-circle fa-fw',
+            ),
+        ),
     ),
     'dishcategory' => array(
         // value is the self-defined field
+        'captions' => 'Món Ăn & Danh Mục',
+        'cssclass' => 'fa fa-cutlery fa-fw',
         'values' => array(
-            'dish' => array(
-                'caption' => 'Món Ăn',
-                'values' => array(
-                    'creation' => array('caption' => 'Thêm Món Ăn'), 
-                    'management' => array('caption' => 'Quản Lý Món Ăn'))),
             'category' => array(
-                'caption' => 'Danh Mục Món Ăn',
-                'values'=>array(
-                    'creation' => array('caption' => 'Thêm Món Danh Mục'), 
-                    'management' => array('caption' => 'Quản Lý Danh Mục'))),
+                'captions' => 'Danh Mục Món Ăn',
+                'cssclass' => 'fa fa-list-alt fa-fw',
+                'values' => array(
+                    'management' => array('captions' => 'Quản Lý Danh Mục'),
+                    'creation' => array('captions' => 'Thêm Món Danh Mục'),
+                )
+            ),
+            'dish' => array(
+                'captions' => 'Món Ăn',
+                'cssclass' => 'fa fa-list-alt fa-fw',
+                'values' => array(
+                    'management' => array('captions' => 'Quản Lý Món Ăn'),
+                    'creation' => array('captions' => 'Thêm Món Ăn'),
+                )
+            ),
         ),
-        'caption' => 'Món Ăn & Danh Mục',
+    ),
+    'question' => array(
+        // value is the self-defined field
+        'captions' => 'Giải Đáp Thắc Mắc',
+        'cssclass' => 'fa  fa-comments fa-fw',
+        'values' => array(
+            'category' => array(
+                'captions' => 'Chưa Trả Lời',
+                'cssclass' => 'fa fa-bell fa-fw',
+            ),
+            'dish' => array(
+                'captions' => 'Đã Trả Lời',
+                'cssclass' => 'fa fa-check-circle fa-fw',
+            ),
+        ),
     ),
     // Plugin module
     PLUGIN => array(
         'values' => NULL,
-        'caption' => NULL ,
+        'caption' => NULL,
         'layouts' => array(
             'subscribed_form' => '_subscribed_form.tpl',
             'gmap' => '_gmap.tpl',
@@ -172,7 +214,7 @@ return array(
             'fileName' => 'TimePassThrought',
             'enabled' => true,
             'params' => array(
-                // array of construct variable here
+            // array of construct variable here
             )
         )
     )

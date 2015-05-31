@@ -22,11 +22,12 @@ class Base {
     const ANCESTOR=1;
     // Only have pages within descendant section
     const DESCENDANT=0;
+    const NOPLUGIN = false;
 
-    public function __construct($filename, $family, $ancestor = 0) {
+    public function __construct($filename, $family, $permission = 0,$plugin = true) {
         $this->filename = $filename;
         // Check if ancestor is this current page
-        if ($ancestor === 1) {
+        if ($permission === self::ANCESTOR) {
             // Get this ancestor module
             // Get page title
             $this->mPageTitle = Root::getConfig()->{$filename}['captions'];
@@ -36,7 +37,6 @@ class Base {
                 $this->mIncludedTemplate[$mod_item] = Root::getConfig()->$mod_item;
             }
             $this->mIncludedTemplate['layouts'] = Root::getConfig()->{$filename}['layouts'];
-            
         }
         else if (sizeof($family) > 0) {
             // Get all child page of family
@@ -52,7 +52,8 @@ class Base {
                     $this->values = $module['values'];
             }
         }
-        $this->mIncludedTemplate[PLUGIN] = Root::getConfig()->{PLUGIN};
+        if($plugin !== self::NOPLUGIN)
+            $this->mIncludedTemplate[PLUGIN] = Root::getConfig()->{PLUGIN};
     }
     
     public function getAncestor($familyrecord)

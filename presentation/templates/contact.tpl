@@ -6,15 +6,15 @@
     <div class="bg">
         <div class="row">
             <div class="col-sm-12">    			   			
-                {include file=$plugins|cat:"/"|cat:$obj->mIncludedTemplate.$plugins.layouts.gmap}
+                {include file="`$plugins`/`$obj->mIncludedTemplate.$plugins.layouts.gmap`"}
             </div>
         </div>  
         <div class="row">                     
             <div class="col-sm-4">    			   			
-                {include file=$plugins|cat:"/"|cat:$obj->mIncludedTemplate.$plugins.layouts.contact_info}
+                {include file="`$plugins`/`$obj->mIncludedTemplate.$plugins.layouts.contact_info`"}
             </div>
             <div class="col-sm-8">    			   			
-                {include file=$plugins|cat:"/"|cat:$obj->mIncludedTemplate.$plugins.layouts.contact_form}
+                {include file="`$plugins`/`$obj->mIncludedTemplate.$plugins.layouts.contact_form`"}
             </div>
 
         </div>   

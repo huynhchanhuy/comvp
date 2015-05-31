@@ -19,7 +19,7 @@ class Admin extends Base {
             header('HTTP/1.1 301 Redirect to Login');
             header('Location: ' . htmlspecialchars_decode(Link::ToLogin()));
         }
-        parent::__construct($filename, $family, 1);
+        parent::__construct($filename, $family, self::ANCESTOR, self::NOPLUGIN);
 
         $this->mSiteUrl = Link::Build('');
         $this->mAdminUrl = Link::ToAdmin();
@@ -39,25 +39,17 @@ class Admin extends Base {
             }
         }
 
-//        $this->mNavigation = array( 
-//            'dashboard'      => array(
-//                'url'   =>  Link::ToAdmin('dashboard')
-//                ),
-//            'article'   => array(
-//                'url'   =>  Link::ToNavigation('guide')
-//                ),
-//        );
         foreach ($this->main_modules as $module) {
             if (isset($this->mIncludedTemplate[$module]['values'])) {
-                //array_walk_recursive($this->mIncludedTemplate[$module]['values'], 'Admin::add_url');
+                $this->mIncludedTemplate[$module]['cssmnlv'] = constant(MENU_CSS."0");
                 $this->RecursivelyAddUrl($this->mIncludedTemplate[$module]['values'], $module);
             } else {
                 $this->mIncludedTemplate[$module]['url'] = Link::ToAdmin($module);
             }
         }
-        echo("<pre>");
-        var_dump($this->mIncludedTemplate);
-        echo("</pre>");
+//        echo("<pre>");
+//        var_dump($this->mIncludedTemplate);
+//        echo("</pre>");
     }
     
     // Traverse an array, if find value in array's element --> add url to this element
@@ -68,6 +60,7 @@ class Admin extends Base {
             // Add key to last element of arrKey
             array_push($arrKey, $key);
             if (isset($value['values'])) {
+                $array[$key]['cssmnlv'] = constant(MENU_CSS.count($arrKey));
                 $this->RecursivelyAddUrl($value['values'], $nav,$arrKey);
             } else {
                 $array[$key]['url'] = Link::ToAdmin($nav, $arrKey);

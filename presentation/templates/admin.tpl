@@ -1,5 +1,6 @@
 {* admin *}
 {config_load file="site.conf"}
+{config_load file="htmlcode.conf"}
 {load_presentation_object filename=$smarty.template family=0 assign="obj"}
 <!DOCTYPE html>
 <html lang="en">
@@ -54,8 +55,8 @@
                     <a class="navbar-brand" href="{$obj->mSiteUrl}" style="color: #0088cc"><i class="fa fa-long-arrow-left fa-fw"></i> <i>Quay Về Trang Chủ</i></a>
                 </div>
                 <!-- /.navbar-header -->
-
-                {include file=$obj->filename|cat:"/"|cat:$obj->mIncludedTemplate.layouts.leftsidebar.name family=$family navigation=$obj->mNavigation}
+                
+                {include file="`$obj->filename`/`$obj->mIncludedTemplate.layouts.leftsidebar.name`" site_dir=$obj->filename family=$family included_template=$obj->mIncludedTemplate}
                 <!-- /.navbar-static-side -->
             </nav>
 

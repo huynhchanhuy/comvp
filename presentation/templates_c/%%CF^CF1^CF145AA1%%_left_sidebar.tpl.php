@@ -1,7 +1,7 @@
-<?php /* Smarty version 2.6.28, created on 2015-04-05 22:11:02
+<?php /* Smarty version 2.6.28, created on 2015-05-31 18:20:28
          compiled from home/_left_sidebar.tpl */ ?>
 <?php require_once(SMARTY_CORE_DIR . 'core.load_plugins.php');
-smarty_core_load_plugins(array('plugins' => array(array('function', 'config_load', 'home/_left_sidebar.tpl', 2, false),array('function', 'load_presentation_object', 'home/_left_sidebar.tpl', 3, false),array('modifier', 'cat', 'home/_left_sidebar.tpl', 112, false),)), $this); ?>
+smarty_core_load_plugins(array('plugins' => array(array('function', 'config_load', 'home/_left_sidebar.tpl', 2, false),array('function', 'load_presentation_object', 'home/_left_sidebar.tpl', 3, false),array('modifier', 'cat', 'home/_left_sidebar.tpl', 104, false),)), $this); ?>
 <?php echo smarty_function_config_load(array('file' => "site.conf"), $this);?>
 
 <?php echo smarty_function_load_presentation_object(array('filename' => 'home/_left_sidebar.tpl','family' => $this->_tpl_vars['family'],'assign' => 'obj'), $this);?>
@@ -105,8 +105,7 @@ smarty_core_load_plugins(array('plugins' => array(array('function', 'config_load
                         </ul>
                 </div>
         </div><!--/brands_products-->
-
-                <div id="subscribed" class="contact-form brands_products">
+        <div id="subscribed" class="contact-form brands_products">
             <?php $_smarty_tpl_vars = $this->_tpl_vars;
 $this->_smarty_include(array('smarty_include_tpl_file' => ((is_array($_tmp=((is_array($_tmp=$this->_tpl_vars['plugins'])) ? $this->_run_mod_handler('cat', true, $_tmp, "/") : smarty_modifier_cat($_tmp, "/")))) ? $this->_run_mod_handler('cat', true, $_tmp, $this->_tpl_vars['obj']->mIncludedTemplate[$this->_tpl_vars['plugins']]['layouts']['subscribed_form']) : smarty_modifier_cat($_tmp, $this->_tpl_vars['obj']->mIncludedTemplate[$this->_tpl_vars['plugins']]['layouts']['subscribed_form'])), 'smarty_include_vars' => array()));
 $this->_tpl_vars = $_smarty_tpl_vars;
@@ -117,7 +116,7 @@ unset($_smarty_tpl_vars);
         <div class="support"><!--price-range-->
                 <h2>Hỗ trợ trực tuyến</h2>
                 <div class="well text-center">
-                         <a href="ymsgr:sendim?Nick_Của_Bạn" mce_href="ymsgr:sendim?<?php echo $this->_config[0]['vars']['yahoo_us']; ?>
+                         <a href="#" mce_href="ymsgr:sendim?<?php echo $this->_config[0]['vars']['yahoo_us']; ?>
 " border="0"><img src="http://opi.yahoo.com/online?u=<?php echo $this->_config[0]['vars']['yahoo_us']; ?>
 &t=14" mce_src="http://opi.yahoo.com/online?u=<?php echo $this->_config[0]['vars']['yahoo_us']; ?>
 &t=14"></a>                         

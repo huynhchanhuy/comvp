@@ -1,100 +1,15 @@
-<?php /* Smarty version 2.6.28, created on 2015-05-24 18:45:09
+<?php /* Smarty version 2.6.28, created on 2015-05-31 21:34:39
          compiled from admin/_left_sidebar.tpl */ ?>
+
 <div class="navbar-default sidebar" role="navigation">
     <div class="sidebar-nav ">
         <ul class="nav" id="side-menu">
-            <li>
-                <a href="#"><i class="fa fa-dashboard fa-fw"></i> Quản Lý Chung</a>
-            </li>
-            <li>
-                <a href="#"><i class="fa fa-edit fa-fw"></i> Nội Dung<span class="fa arrow"></span></a>
-                <ul class="nav nav-second-level">
-                    <li>
-                        <a href="#"><i class="fa fa-file-text fa-fw"></i> Viết Bài Giới Thiệu</a>
-                    </li>
-                    <li>
-                        <a href="#"><i class="fa fa-info fa-fw"></i> Viết Bài Hướng Dẫn</a>
-                    </li>
-                    <li>
-                        <a href="http://localhost/eshopper/index.php?admin"><i class="fa fa-question fa-fw"></i> Câu Hỏi Thường Gặp</a>
-                    </li>
-                </ul>
-                <!-- /.nav-second-level -->
-            </li>
-            <li>
-                <a href="#"><i class="fa fa-th-list fa-fw"></i> Đặt Món<span class="fa arrow"></span></a>
-                <ul class="nav nav-second-level">
-                    <li>
-                        <a href="flot.html">Danh Sách Chưa Duyệt</a>
-                    </li>
-                    <li>
-                        <a href="morris.html">Danh Sách Đã Duyệt</a>
-                    </li>
-                </ul>
-                <!-- /.nav-second-level -->
-            </li>
-            <li>
-                <a href="#"><i class="fa fa-book fa-fw"></i> Thực Đơn<span class="fa arrow"></span></a>
-                <ul class="nav nav-second-level">
-                    <li>
-                        <a href="panels-wells.html">Quản Lý Thực Đơn</a>
-                    </li>
-                    <li>
-                        <a href="panels-wells.html">Thiết Lập Thực Đơn</a>
-                    </li>
-
-                    <li>
-                        <a href="buttons.html">Thêm Mới Thực Đơn</a>
-                    </li>
-                </ul>
-                <!-- /.nav-second-level -->
-            </li>
-            <li>
-                <a href="#"><i class="fa fa-cutlery fa-fw"></i> Món Ăn & Danh Mục<span class="fa arrow"></span></a>
-                <ul class="nav nav-second-level">
-                    <li>
-                        <a href="#"> Danh Mục Món Ăn<span class="fa arrow"></span></a>
-                        <ul class="nav nav-third-level">
-                            <li>
-                                <a href="#">Quản Lý Danh Mục</a>
-                            </li>
-                            <li>
-                                <a href="#">Thêm Danh Mục</a>
-                            </li>
-                        </ul>
-                        <!-- /.nav-third-level -->
-                    </li>
-                </ul>
-                <!-- /.nav-second-level -->
-                <ul class="nav nav-second-level">
-                    <li>
-                        <a href="#"> Món Ăn<span class="fa arrow"></span></a>
-                        <ul class="nav nav-third-level">
-                            <li>
-                                <a href="#">Quản Lý Món Ăn</a>
-                            </li>
-                            <li>
-                                <a href="#">Thêm Món Ăn</a>
-                            </li>
-                        </ul>
-                        <!-- /.nav-third-level -->
-                    </li>
-                </ul>
-                <!-- /.nav-second-level -->
-            </li>
-            <li>
-                <a href="#"><i class="fa  fa-comments fa-fw"></i> Giải Đáp Thắc Mắc<span class="fa arrow"></span></a>
-                <ul class="nav nav-second-level">
-                    <li>
-                        <a href="blank.html">Chưa Trả Lời</a>
-                    </li>
-                    <li>
-                        <a href="login.html">Đã Trả Lời</a>
-                    </li>
-                </ul>
-                <!-- /.nav-second-level -->
-            </li>
-        </ul>
+            <?php $_smarty_tpl_vars = $this->_tpl_vars;
+$this->_smarty_include(array('smarty_include_tpl_file' => ($this->_tpl_vars['site_dir'])."/_nav.tpl", 'smarty_include_vars' => array('included_template' => $this->_tpl_vars['included_template'])));
+$this->_tpl_vars = $_smarty_tpl_vars;
+unset($_smarty_tpl_vars);
+ ?>
+                    </ul>
     </div>
     <!-- /.sidebar-collapse -->
 </div>

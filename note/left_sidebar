@@ -1,13 +1,7 @@
-{* _left_sidebar *}
-
-{*<pre>
-     {$included_template|var_dump}
-</pre>*}
 <div class="navbar-default sidebar" role="navigation">
     <div class="sidebar-nav ">
         <ul class="nav" id="side-menu">
-            {include file="`$site_dir`/_nav.tpl" included_template=$included_template}
-            {*<li>
+            <li>
                 <a href="#"><i class="fa fa-dashboard fa-fw"></i> Quản Lý Chung</a>
             </li>
             <li>
@@ -97,7 +91,7 @@
                     </li>
                 </ul>
                 <!-- /.nav-second-level -->
-            </li>*}
+            </li>
         </ul>
     </div>
     <!-- /.sidebar-collapse -->
