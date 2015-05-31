@@ -14,7 +14,6 @@ class Header extends Base {
 
     public function __construct($module,$family) {
         parent::__construct($module,$family);
-        
         $home_class='';
         $contact_class='';
         $menu_class='';

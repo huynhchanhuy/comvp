@@ -18,6 +18,10 @@ class Base {
     public $mPageTitle;
     public $values;
     public $main_modules;
+    // Have all pages and being treated as an ancestor
+    const ANCESTOR=1;
+    // Only have pages within descendant section
+    const DESCENDANT=0;
 
     public function __construct($filename, $family, $ancestor = 0) {
         $this->filename = $filename;
@@ -32,7 +36,9 @@ class Base {
                 $this->mIncludedTemplate[$mod_item] = Root::getConfig()->$mod_item;
             }
             $this->mIncludedTemplate['layouts'] = Root::getConfig()->{$filename}['layouts'];
-        } else if (sizeof($family) > 0) {
+            
+        }
+        else if (sizeof($family) > 0) {
             // Get all child page of family
             $this->mIncludedTemplate = Root::getConfig()->$family[0];
             foreach ($this->mIncludedTemplate as $module) {
@@ -47,6 +53,11 @@ class Base {
             }
         }
         $this->mIncludedTemplate[PLUGIN] = Root::getConfig()->{PLUGIN};
+    }
+    
+    public function getAncestor($familyrecord)
+    {
+        return $familyrecord[0];
     }
 
 }

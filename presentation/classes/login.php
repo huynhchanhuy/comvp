@@ -15,6 +15,10 @@ class Login extends Base {
     // Initialize presentation object
     public function init()
     {
-        
+        if(Authentication::AutoLogin() !== false)
+        {
+            header('HTTP/1.1 301 Redirect to Main');
+            header('Location: ' . htmlspecialchars_decode(Link::Build('')));
+        }
     }
 }

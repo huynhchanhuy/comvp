@@ -1,3 +1,6 @@
+{* admin *}
+{*{load_presentation_object filename=$smarty.template family=$family assign="obj"}
+{$navigation.home.url|var_dump}*}
 <div class="navbar-default sidebar" role="navigation">
     <div class="sidebar-nav ">
         <ul class="nav" id="side-menu">

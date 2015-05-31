@@ -14,7 +14,7 @@ class Main extends Base {
     
     public function __construct($filename,$family) {
         // main
-        parent::__construct($filename,$family,1);
+        parent::__construct($filename,$family,parent::ANCESTOR);
         $this->mSiteUrl = Link::Build('');
         if(is_array($this->mPageTitle))
             $this->mPageTitle = $this->mPageTitle[0];

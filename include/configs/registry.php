@@ -40,7 +40,7 @@ return array(
     'admin' => array(
         'captions' => 'Administrator',
         'values' => 'admin',
-        'modules' => array('dashboard','article'),#array('order','menudish','dish','info','anwser'), 
+        'modules' => array('dashboard','article','dishcategory'),#array('order','menudish','dish','info','anwser'), 
         //order:check,unchecked - menu:manage,create,update,delete, dish:manage,create,update,delete info: aboutus,guide,fag - anwser:answered and unanswered
         'layouts' => array(
             'leftsidebar' => array(
@@ -122,12 +122,35 @@ return array(
     ),
     'article' => array(
         // value is the self-defined field
-        'values' => array('intro','guide','faq'),
-        'captions' => array(
-            'intro' => 'Viết Bài Giới Thiệu',
-            'guide' => 'Viết Bài Hướng Dẫn',
-            'fag' => 'Câu Hỏi Thường Gặp',
-        )
+        'values' => array('intro' => array('caption'=>'Viết Bài Giới Thiệu',),
+                            'guide'=> array('caption'=>'Viết Bài Hướng Dẫn',),
+                                'faq'=> array('caption'=>'Câu Hỏi Thường Gặp',),
+            ),
+        'caption' => 'Quản Lý Nội Dung',
+    ),
+    'article' => array(
+        // value is the self-defined field
+        'values' => array('intro' => array('caption'=>'Viết Bài Giới Thiệu',),
+                            'guide'=> array('caption'=>'Viết Bài Hướng Dẫn',),
+                                'faq'=> array('caption'=>'Câu Hỏi Thường Gặp',),
+            ),
+        'caption' => 'Quản Lý Nội Dung',
+    ),
+    'dishcategory' => array(
+        // value is the self-defined field
+        'values' => array(
+            'dish' => array(
+                'caption' => 'Món Ăn',
+                'values' => array(
+                    'creation' => array('caption' => 'Thêm Món Ăn'), 
+                    'management' => array('caption' => 'Quản Lý Món Ăn'))),
+            'category' => array(
+                'caption' => 'Danh Mục Món Ăn',
+                'values'=>array(
+                    'creation' => array('caption' => 'Thêm Món Danh Mục'), 
+                    'management' => array('caption' => 'Quản Lý Danh Mục'))),
+        ),
+        'caption' => 'Món Ăn & Danh Mục',
     ),
     // Plugin module
     PLUGIN => array(

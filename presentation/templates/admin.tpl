@@ -55,7 +55,7 @@
                 </div>
                 <!-- /.navbar-header -->
 
-                {include file=$obj->filename|cat:"/"|cat:$obj->mIncludedTemplate.layouts.leftsidebar.name family=$family}
+                {include file=$obj->filename|cat:"/"|cat:$obj->mIncludedTemplate.layouts.leftsidebar.name family=$family navigation=$obj->mNavigation}
                 <!-- /.navbar-static-side -->
             </nav>
 

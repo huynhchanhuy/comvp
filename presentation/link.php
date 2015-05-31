@@ -48,10 +48,6 @@ class Link {
         return strtolower($string);
     }
     
-    public static function ToAdmin() {
-        return self::Build('index.php?admin');
-    }
-    
     public static function ToUserProfile() {
         return self::Build('index.php');
     }
@@ -88,6 +84,25 @@ class Link {
             return self::Build('index.php?nav=contact');
         else
             return self::Build('index.php?nav=contact#contact-form');
+    }
+
+//ADMIN
+    
+    public static function ToAdmin($nav=null,$val=null) {
+        $link = 'index.php?admin';
+        if($nav !== null){
+            $link .= '&nav='.$nav;
+            if(isset($val)){
+            foreach($val as $key => $value)
+                $link .= '&val'.$key.'='.$value;
+            }
+        }
+             
+        return self::Build($link);
+    }   
+    
+    public static function ToArticle($val) {
+        return self::ToAdmin('article', $val);
     }
 
     // Redirects to proper URL if not already there

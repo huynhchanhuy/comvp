@@ -1,4 +1,4 @@
-<?php /* Smarty version 2.6.28, created on 2015-04-25 19:36:10
+<?php /* Smarty version 2.6.28, created on 2015-05-24 18:45:09
          compiled from admin/_left_sidebar.tpl */ ?>
 <div class="navbar-default sidebar" role="navigation">
     <div class="sidebar-nav ">
