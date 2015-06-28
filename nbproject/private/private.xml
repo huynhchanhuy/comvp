@@ -3,19 +3,15 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/xampp/htdocs/Eshopper/presentation/classes/main/_header.php</file>
             <file>file:/C:/xampp/htdocs/Eshopper/presentation/classes/admin.php</file>
-            <file>file:/C:/xampp/htdocs/Eshopper/presentation/templates/dashboard.tpl</file>
-            <file>file:/C:/xampp/htdocs/Eshopper/master/core.php</file>
+            <file>file:/C:/xampp/htdocs/Eshopper/presentation/templates/article.tpl</file>
             <file>file:/C:/xampp/htdocs/Eshopper/presentation/classes/admin/_left_sidebar.php</file>
-            <file>file:/C:/xampp/htdocs/Eshopper/note/Readme.txt</file>
-            <file>file:/C:/xampp/htdocs/Eshopper/presentation/templates/admin.tpl</file>
+            <file>file:/C:/xampp/htdocs/Eshopper/presentation/classes/dashboard.php</file>
             <file>file:/C:/xampp/htdocs/Eshopper/presentation/templates/admin/_left_sidebar.tpl</file>
-            <file>file:/C:/xampp/htdocs/Eshopper/presentation/link.php</file>
             <file>file:/C:/xampp/htdocs/Eshopper/master/base.php</file>
-            <file>file:/C:/xampp/htdocs/Eshopper/presentation/templates/main/_header.tpl</file>
+            <file>file:/C:/xampp/htdocs/Eshopper/presentation/templates/home.tpl</file>
             <file>file:/C:/xampp/htdocs/Eshopper/include/configs/registry.php</file>
-            <file>file:/C:/xampp/htdocs/Eshopper/presentation/classes/main.php</file>
+            <file>file:/C:/xampp/htdocs/Eshopper/presentation/classes/home.php</file>
         </group>
     </open-files>
 </project-private>

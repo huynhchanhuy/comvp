@@ -32,6 +32,8 @@
 
         <!-- Custom Fonts -->
         <link href="{#adminpage_style_dir#}bower_components/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+        
+        <link rel="stylesheet" type="text/css" href="{#adminpage_style_dir#}ext/css/upload.css">
 
         <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
         <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -43,13 +45,12 @@
     </head>
 
     <body>
-
         <div id="wrapper">
 
             <!-- Navigation -->
             <nav class="navbar navbar-default navbar-static-top" role="navigation" style="margin-bottom: 0">
                 <div class="navbar-header">
-                    <a class="navbar-brand" href="{$obj->mAdminUrl}">Khu Vực Quản Lý Website</a>
+                    <a class="navbar-brand" style="float:left" href="{$obj->mAdminUrl}"><b><font face="Bradley Hand ITC" size="6">[ -- ADMINISTRATOR -- ]</font></b></a>
                 </div>
                 <div class="navbar-header" style="float:right">
                     <a class="navbar-brand" href="{$obj->mSiteUrl}" style="color: #0088cc"><i class="fa fa-long-arrow-left fa-fw"></i> <i>Quay Về Trang Chủ</i></a>
@@ -61,7 +62,8 @@
             </nav>
 
             <div id="page-wrapper">
-                {include file=$obj->mContentsCell family=$family}
+                {*tpl file in Content Cell is root file has the same level with admin in directory*}
+                {include file=$obj->mContentsCell family=0 site_dir=$obj->filename}
             </div>
             <!-- /#page-wrapper -->
 
@@ -82,7 +84,9 @@
 
         <!-- Custom Theme JavaScript -->
         <script src="{#adminpage_style_dir#}dist/js/sb-admin-2.js"></script>
-        <script src="{#adminpage_style_dir#}/js/main.js"></script>
+        <script src="{#adminpage_style_dir#}ext/js/upload.js"></script>
+        
+        <script src="{#adminpage_style_dir#}ext/js/main.js"></script>
 
     </body>
 

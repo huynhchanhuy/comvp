@@ -29,6 +29,7 @@ function smarty_function_load_presentation_object($params, $smarty) {
         array_push($family, $filename);
         $isPlugin = TRUE;
     } else {
+        
         if (!isset($params['family']) || $params['family'] === 0)
             $family[0] = $filename;
         else {

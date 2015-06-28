@@ -1,11 +1,10 @@
-<?php /* Smarty version 2.6.28, created on 2015-04-05 21:57:18
+<?php /* Smarty version 2.6.28, created on 2015-06-12 20:38:19
          compiled from main/_footer.tpl */ ?>
 <?php require_once(SMARTY_CORE_DIR . 'core.load_plugins.php');
 smarty_core_load_plugins(array('plugins' => array(array('function', 'load_presentation_object', 'main/_footer.tpl', 2, false),)), $this); ?>
 <?php echo smarty_function_load_presentation_object(array('filename' => 'main/_footer.tpl','family' => $this->_tpl_vars['family'],'assign' => 'obj'), $this);?>
 
 <?php $this->assign('plugins', @PLUGIN); ?> 
-
 
 <div class="footer-bottom">
         <div class="container">

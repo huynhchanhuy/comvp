@@ -26,9 +26,9 @@ class Admin extends Base {
         $this->mContentsCell = $this->main_modules[0] . TPL;
         if (isset($_GET['nav']) && in_array($_GET['nav'], $this->main_modules)) {
             $this->mContentsCell = $_GET['nav'] . TPL;
-            // Check submodules of nav
-            $this->values = Root::getConfig()->{$_GET['nav']}['values'];
             if (isset($_GET['val'])) {
+                // Check submodules of nav
+                $this->values = Root::getConfig()->{$_GET['nav']}['values'];
                 if ((is_array($this->values) && array_key_exists($_GET['val'], $this->values)) || (!is_array($this->values) && $_GET['val'] === $this->values)) {
                     $this->mValue = $_GET['val'];
                     if (is_array($this->values))

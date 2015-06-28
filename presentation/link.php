@@ -104,6 +104,10 @@ class Link {
     public static function ToArticle($val) {
         return self::ToAdmin('article', $val);
     }
+    
+    public static function UploadImg(){
+        return self::Build('index.php?admin&uploadimg');
+    }
 
     // Redirects to proper URL if not already there
 //    public static function CheckRequest() {

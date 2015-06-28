@@ -7,18 +7,10 @@
  */
 
 /**
- * Description of store_front
+ * Description of dashboard
  *
  * @author Huy
  */
-
-class Home extends Base {
+class Dashboard extends Base {
     
-    // Initialize presentation object
-    public function init()
-    {
-//        echo "<pre>";
-//        var_dump($this);die();
-//        echo "</pre>";
-    }
 }
