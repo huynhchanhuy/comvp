@@ -1,5 +1,6 @@
 {* home *}
 {load_presentation_object filename=$smarty.template family=$family assign="obj"}
+
 <section id="slider"><!--slider-->
     {include file="`$obj->filename`/`$obj->mIncludedTemplate.layouts.HOME_SLIDER.name`" famliy=$family}
 </section><!--/slider-->

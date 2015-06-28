@@ -47,11 +47,11 @@ class Link {
         // Return the modified string
         return strtolower($string);
     }
-    
+
     public static function ToUserProfile() {
         return self::Build('index.php');
     }
-    
+
     public static function ToNavigation($nav) {
         return self::Build('index.php?nav=' . $nav);
     }
@@ -64,7 +64,7 @@ class Link {
     public static function ToLogin() {
         return self::Build('index.php?nav=login');
     }
-    
+
     // Create link to logout page
     public static function ToLogout() {
         return self::Build('index.php?logout');
@@ -78,34 +78,35 @@ class Link {
         }
         return self::Build($link);
     }
-    
-    public static function ToContactForm($contactform=false){
-        if($contactform === false)
+
+    public static function ToContactForm($contactform = false) {
+        if ($contactform === false)
             return self::Build('index.php?nav=contact');
         else
             return self::Build('index.php?nav=contact#contact-form');
     }
 
 //ADMIN
-    
-    public static function ToAdmin($nav=null,$val=null) {
+
+    public static function ToAdmin($nav = null, $val = null) {
         $link = 'index.php?admin';
-        if($nav !== null){
-            $link .= '&nav='.$nav;
-            if(isset($val)){
-            foreach($val as $key => $value)
-                $link .= '&val'.$key.'='.$value;
+        if ($nav !== null) {
+            $link .= '&nav=' . $nav;
+            if (isset($val)) {
+                foreach ($val as $key => $value)
+                    $link .= '&val' . $key . '=' . $value;
             }
         }
-             
+
         return self::Build($link);
-    }   
-    
+    }
+
     public static function ToArticle($val) {
         return self::ToAdmin('article', $val);
     }
-    
-    public static function UploadImg(){
+
+    public static function UploadImg() {
+        $_SESSION['current_url'] = "http://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
         return self::Build('index.php?admin&uploadimg');
     }
 

@@ -7,8 +7,8 @@
  */
 
 class Authentication {
-    
-    private function __construct(){
+
+    private function __construct() {
         
     }
 
@@ -73,23 +73,23 @@ class Authentication {
 
                     // Let's remove our old token.
                     self::RemoveAuthInfo($authInfo['id']);
-                    
+
                     // Let's set the session variable appropriately...
                     $_SESSION['us'] = $authInfo['username'];
                     $_SESSION['lv'] = $authInfo['level'];
 
                     // Generate a new token for future convenience...
-                    self::RememberMe($authInfo['userid'],true);
+                    self::RememberMe($authInfo['userid'], true);
 
                     // We return true here.
                     return true;
                 }
             }
         } else
-            # Need Authentication
+        # Need Authentication
             return false;
     }
-    
+
     private static function RememberMe($userid) {
         $token = Hasher::RandomBytes(24, true, false, "", $rounds, $drop);
         do {
@@ -98,11 +98,11 @@ class Authentication {
         #$expires = new DateTime('now');
         #$expires->add(new DateInterval('PT336H'));
         $time = time() + 1209600;
-        $expires = gmdate("Y-m-d\TH:i:s\Z",$time);
+        $expires = gmdate("Y-m-d\TH:i:s\Z", $time);
         self::InsertAuthInfo($selector, hash('sha256', $token), $userid, $expires);
         setcookie('auth', base64_encode($selector) . ':' . base64_encode($token), $time, '/');
     }
-    
+
     private static function IsAuthenticated() {
         if (isset($_SESSION['us']))
             return 1;

@@ -23,28 +23,28 @@
                         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum tincidunt est vitae ultrices accumsan. Aliquam ornare lacus adipiscing, posuere lectus et, fringilla augue.</p>
                     </div>
                 </div>
-                
+
                 <div class="col-lg-6">
                     <div class="well well-lg">
                         <h4>Món Ăn & Danh Mục</h4>
                         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum tincidunt est vitae ultrices accumsan. Aliquam ornare lacus adipiscing, posuere lectus et, fringilla augue.</p>
                     </div>
                 </div>
-                
+
                 <div class="col-lg-6">
                     <div class="well well-lg">
                         <h4>Thực Đơn</h4>
                         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum tincidunt est vitae ultrices accumsan. Aliquam ornare lacus adipiscing, posuere lectus et, fringilla augue.</p>
                     </div>
                 </div>
-                
+
                 <div class="col-lg-6">
                     <div class="well well-lg">
                         <h4>Giải Đáp Thắc Mắc</h4>
                         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum tincidunt est vitae ultrices accumsan. Aliquam ornare lacus adipiscing, posuere lectus et, fringilla augue.</p>
                     </div>
                 </div>
-                
+
             </div>
         </div>
     </div>

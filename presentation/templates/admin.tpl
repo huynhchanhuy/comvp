@@ -32,7 +32,7 @@
 
         <!-- Custom Fonts -->
         <link href="{#adminpage_style_dir#}bower_components/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
-        
+
         <link rel="stylesheet" type="text/css" href="{#adminpage_style_dir#}ext/css/upload.css">
 
         <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
@@ -43,7 +43,6 @@
         <![endif]-->
 
     </head>
-
     <body>
         <div id="wrapper">
 
@@ -56,7 +55,7 @@
                     <a class="navbar-brand" href="{$obj->mSiteUrl}" style="color: #0088cc"><i class="fa fa-long-arrow-left fa-fw"></i> <i>Quay Về Trang Chủ</i></a>
                 </div>
                 <!-- /.navbar-header -->
-                
+
                 {include file="`$obj->filename`/`$obj->mIncludedTemplate.layouts.leftsidebar.name`" site_dir=$obj->filename family=$family included_template=$obj->mIncludedTemplate}
                 <!-- /.navbar-static-side -->
             </nav>
@@ -85,7 +84,7 @@
         <!-- Custom Theme JavaScript -->
         <script src="{#adminpage_style_dir#}dist/js/sb-admin-2.js"></script>
         <script src="{#adminpage_style_dir#}ext/js/upload.js"></script>
-        
+
         <script src="{#adminpage_style_dir#}ext/js/main.js"></script>
 
     </body>

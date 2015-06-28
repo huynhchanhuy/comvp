@@ -13,8 +13,21 @@ class Main extends Base {
     public $mContentsCell;
     
     public function __construct($filename,$family) {
+        // when logout
+        if (isset($_GET['logout']))
+        {
+            Authentication::Logout ();
+            header('HTTP/1.1 302 Logout Successs');
+            header('Location: ' . Link::Build(''));
+        }
+        Authentication::AutoLogin();
+        
         // main
         parent::__construct($filename,$family,parent::ANCESTOR);
+    }
+    
+    // Class constructor
+    public function init() {
         $this->mSiteUrl = Link::Build('');
         if(is_array($this->mPageTitle))
             $this->mPageTitle = $this->mPageTitle[0];
@@ -27,18 +40,6 @@ class Main extends Base {
         else {
             // redirect to 404 page - need to fix url
         }
-    }
-    
-    // Class constructor
-    public function init() {
-        // when logout
-        if (isset($_GET['logout']))
-        {
-            Authentication::Logout ();
-            header('HTTP/1.1 302 Logout Successs');
-            header('Location: ' . Link::Build(''));
-        }
-        Authentication::AutoLogin();
     }
 
 //    // Initialize presentation object

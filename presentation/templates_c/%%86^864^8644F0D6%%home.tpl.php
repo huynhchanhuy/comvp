@@ -1,8 +1,9 @@
-<?php /* Smarty version 2.6.28, created on 2015-06-13 19:54:07
+<?php /* Smarty version 2.6.28, created on 2015-06-28 18:51:55
          compiled from home.tpl */ ?>
 <?php require_once(SMARTY_CORE_DIR . 'core.load_plugins.php');
 smarty_core_load_plugins(array('plugins' => array(array('function', 'load_presentation_object', 'home.tpl', 2, false),)), $this); ?>
 <?php echo smarty_function_load_presentation_object(array('filename' => 'home.tpl','family' => $this->_tpl_vars['family'],'assign' => 'obj'), $this);?>
+
 
 <section id="slider"><!--slider-->
     <?php $_smarty_tpl_vars = $this->_tpl_vars;

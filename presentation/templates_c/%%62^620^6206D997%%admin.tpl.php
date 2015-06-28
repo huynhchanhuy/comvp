@@ -1,4 +1,4 @@
-<?php /* Smarty version 2.6.28, created on 2015-06-13 21:07:03
+<?php /* Smarty version 2.6.28, created on 2015-06-28 18:48:39
          compiled from admin.tpl */ ?>
 <?php require_once(SMARTY_CORE_DIR . 'core.load_plugins.php');
 smarty_core_load_plugins(array('plugins' => array(array('function', 'config_load', 'admin.tpl', 2, false),array('function', 'load_presentation_object', 'admin.tpl', 4, false),)), $this); ?>
@@ -58,7 +58,6 @@ ext/css/upload.css">
         <![endif]-->
 
     </head>
-
     <body>
         <div id="wrapper">
 
@@ -81,9 +80,9 @@ unset($_smarty_tpl_vars);
  ?>
                 <!-- /.navbar-static-side -->
             </nav>
-
+                    
             <div id="page-wrapper">
-                <?php $_smarty_tpl_vars = $this->_tpl_vars;
+                                <?php $_smarty_tpl_vars = $this->_tpl_vars;
 $this->_smarty_include(array('smarty_include_tpl_file' => $this->_tpl_vars['obj']->mContentsCell, 'smarty_include_vars' => array('family' => 0,'site_dir' => $this->_tpl_vars['obj']->filename)));
 $this->_tpl_vars = $_smarty_tpl_vars;
 unset($_smarty_tpl_vars);
